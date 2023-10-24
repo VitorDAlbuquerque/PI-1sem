@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bela Wonder</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.4.2/css/all.css">
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <img class="imgLogo" src="images/logo sem fundo.png" alt="">
+        <div class="divInputSearch">
+            <input type="text" class="searchInput">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        
+        <div class="buttonsNavbar">
+            <p class="btnNavbar"><i class="fa-regular fa-circle-question"></i></p>
+            <p class="btnNavbar"><i class="fa-regular fa-circle-user"></i></p>
+            <p class="btnNavbar" onclick='slideLikes()'><i class="fa-regular fa-heart"></i></p>
+            <p class="btnNavbar" onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i></p>
+        </div>
+
+    </div>
+    <div class="bag" id="bag">
+        <div class="bagContent">
+            <div class="bagTitle">
+                <h2>Sacola</h2>
+                <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+            <div class="divProductsOnBag">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="likes" id="likes">
+        <div class="likesContent">
+            <div class="bagTitle">
+                <h2>Likes</h2>
+                <p class="closeBag" onclick="closeLikes()"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+            <div class="divProductsLiked">
+                <ul id="listLikes" class="listLiked">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="navbarLinks">
+        <li class="liNav">INÍCIO</li>
+        <li class="liNav">CATEGORIAS</li>
+        <li class="liNav">NOVIDADES</li>
+        <li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li>
+        <li class="liNav">RASTREAMENTO DE PEDIDOS</li>
+    </div>
+    <div class="main">
+        <div class="mainTitle">
+            <div class="mainTitleLeft">
+                <h1 class="title">Faça a diferença</h1>
+                <p class="description">
+                    Junte-se anósnesta jornadade elegância consciente, onde o amor pela
+                    natureza e o estilo se unem para criar um mundo mais brilhante, tanto
+                    para você quanto para nossos amigos marinhos. Explore nossa coleção
+                    e faça parte dessa mudança. Juntos, podemos fazer a diferença, um
+                    acessório de cada vez.
+                </p>
+                <button class="btnHelp">SAIBA COMO AJUDAR</button>
+            </div>
+            <div class="mainTitleRight">
+                <div class="imagemFoda">
+                    <img class="imageMainTitle" src="images/SEU PEDIDO (5).png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divAds">
+        <div class="ad">
+            <h4 class="h4Ad">10% off</h4>
+            <p>no pagamento via PIX</p>
+        </div>
+        <div class="ad">
+            <h4 class="h4Ad">Frete grátis</h4>
+            <p>para todo o Brasil</p>
+        </div>
+        <div class="ad">
+            <h4 class="h4Ad">Parcelamento</h4>
+            <p>em até 12x</p>
+        </div>
+        <div class="ad">
+            <h4 class="h4Ad">Site seguro</h4>
+            <p>compre tranquilo</p>
+        </div>
+        <div class="ad">
+            <h4 class="h4Ad">Atendimento</h4>
+            <p>via WhatsApp</p>
+        </div>
+        <div class="ad">
+            <h4 class="h4Ad">5% off</h4>
+            <p>ao se cadastrar</p>
+        </div>
+    </div>
+
+    <div class="promotes">
+        <div class="cardPromote1">
+            <div class="iconPlus"><i class="fa-solid fa-circle-plus" style="color: #F2EFEB;"></i></div>
+            <div class="titlePromotes">
+                <h3>coleção de verão</h3>
+                <p class="descriptionPromote">ATÉ 50% OFF</p>
+            </div>
+        </div>
+        <div class="cardPromote2">
+            <div class="iconPlus">
+                <i class="fa-solid fa-circle-plus" style="color: #F2EFEB;"></i>
+            </div>
+            <div class="titlePromotes">
+                <h3>maiores sucessos</h3>
+            </div>
+        </div>
+        <div class="cardPromote3">
+            <div class="iconPlus">
+                <i class="fa-solid fa-circle-plus" style="color: #F2EFEB;"></i>
+            </div>
+            <div class="titlePromotesWhite">
+                <h3>compre um e ganhe dois</h3>
+            </div>
+        </div>
+        <div class="cardPromote4">
+            <div class="iconPlus">
+                <i class="fa-solid fa-circle-plus" style="color: #F2EFEB;"></i>
+            </div>
+            <div class="titlePromotesWhite">
+                <h3>novidades</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainProducts">
+
+        <div class="product">
+            <div >
+                <img class="productImg" src="/images/colar ocean life.jpg" alt="">
+            </div>
+            <div class="productInfo">
+                <p class="heartIcon" ><i onclick="handleHeartIcon1()" id="heartIcon1" class="fa-regular fa-heart"></i></p>
+
+                <h2 class="productTitle">colar ocean life</h2>
+                <p class="productDescription">Rastreie uma tartaruga</p>
+            </div>
+        </div>
+
+
+        <div class="product">
+            <div >
+                <img class="productImg" src="/images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt="">
+            </div>
+            <div class="productInfo">
+                <p class="heartIcon" ><i id="heartIcon2" onclick="handleHeartIcon2()" class="fa-regular fa-heart product"></i></p>
+
+                <h2 class="productTitle">anel sunshine</h2>
+                <p class="productDescription">Monitorar Golfinho Resgatado</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div >
+                <img class="productImg" src="/images/colar ocean life.webp" alt="">
+            </div>
+            <div class="productInfo">
+                <p class="heartIcon" ><i onclick="handleHeartIcon3()" id="heartIcon3" class="fa-regular fa-heart product"></i></p>
+                <h2 class="productTitle">colar tubarão</h2>
+                <p class="productDescription">Rastreie Um Tubarão Resgatado</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="contato">
+            <h1 class="titleFooter">CONTATO</h1>
+            <div class="linksFooter">
+                <li>Endereço: Av. Ana Costa 484 - Santos-SP, CEP: 11060-002</li>
+                <li>E-mail: sac@belawonder.com</li>
+                <li>Telefone: (13) 99660-8197</li>
+                <li>Horário de Atendimento: Segunda a Sexta das 09h às 16h</li>
+            </div>
+            
+        </div>
+        <div class="institucional">
+            <h1 class="titleFooter">INSTITUCIONAL</h1>
+            <div class="linksFooter">
+                <li>Política de Reembolso</li>
+                <li>Política de Frete e Entrega</li>
+                <li>Política de privacidade</li>
+                <li>Termos de Serviço</li>
+                <li>Perguntas Frequentes</li>
+            </div>
+            
+        </div>
+        <div class="redes">
+            <div class="redesContent">
+                <h3>NOSSAS REDES SOCIAIS</h3>
+                <div class="divIncosFooter">
+                    <i class="fa-brands fa-square-whatsapp"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
