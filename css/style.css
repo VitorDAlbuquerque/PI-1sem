@@ -6,23 +6,18 @@
 
 @font-face {
     font-family: telegrafBold;
-    src: url(/fonts/PPTelegraf-UltraBold.otf);
+    src: url(../fonts/PPTelegraf-UltraBold.otf);
     font-weight: bold;
 }
 
 @font-face {
     font-family: telegraf;
-    src: url(/fonts/PPTelegraf-Regular.otf);
+    src: url(../fonts/PPTelegraf-Regular.otf);
 }
 
 @font-face {
     font-family: garet;
-    src: url(/fonts/Garet-Book.otf);
-}
-
-@font-face {
-    font-family: garet;
-    src: url(/fonts/Garet-Book.otf);
+    src: url(../fonts/Garet-Book.otf);
 }
 
 *{
@@ -32,6 +27,8 @@
 
 body {
     font-family: jost, 'sans-serif';
+    background:  #F2EFEB;
+
 }
 
 .navbar {
@@ -44,6 +41,12 @@ body {
     overflow: hidden;
 }
 
+@media screen and (max-width: 900px) {
+    .navbar{
+        padding: 0;
+    }
+}
+
 .imgLogo{
     height: 200px;
     position: relative;
@@ -53,6 +56,12 @@ body {
 .divInputSearch{
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    .divInputSearch{
+        display: none;
+    }
 }
 
 .fa-magnifying-glass{
@@ -142,6 +151,7 @@ body {
     background: #D9D9D9;
     padding: 10px;
     border-radius: 10px;
+    transition: 0.2s;
 }
 
 .liLiked:hover {
@@ -157,9 +167,27 @@ body {
     background: #D9D9D9;
     min-height: 35px;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 100px;
+    overflow-x:  auto;
+    overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: gray;
+}
+
+.navbarLinks .liNav:first-child {
+    margin-left: auto;
+}
+
+.navbarLinks .liNav:last-child {
+    margin-right: auto;
 }
 
 .liNav {
@@ -170,7 +198,9 @@ body {
     align-items: center;
     transition: 0.2s;
     background: #D9D9D9;
+    min-width: fit-content;
 }
+
 
 li{
     list-style: none;
@@ -183,22 +213,39 @@ li{
 .main {
     background:  #F2EFEB;
     padding: 0 110px 0 110px;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+    .main{
+        padding: 0;
+    }
 }
 
 .mainTitle {
     display: flex;
-    font-family: telegraf;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
 }
 
 .mainTitleLeft {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
     font-size: 100px;
     line-height: 1.1;
     color: #262626;
-    font-family: telegraf;
+    font-family: telegraf, 'sans-serif';
+    max-width: 500px;
+
 }
 
 .imageMainTitle{
@@ -211,6 +258,12 @@ li{
     color: #262626;
     line-height: 1.2;
     font-family: telegraf;
+    max-width: 500px;
+}
+
+.divButton{
+    width: 100%;
+    max-width: 500px;
 }
 
 .btnHelp{
@@ -234,7 +287,12 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 0 0 70px;
+}
+
+@media screen and (max-width: 900px) {
+    .mainTitleRight{
+        display: none;
+    }
 }
 
 .imagemFoda{
@@ -259,6 +317,12 @@ li{
     gap: 30px;
 }
 
+@media screen and (max-width: 1095px) {
+    .divAds{
+        display: none;
+    }
+}
+
 .h4Ad{
     font-size: 20px;
 }
@@ -275,12 +339,13 @@ li{
 
 .promotes {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 70px;
     margin-top: 20px;
     font-size: 30px;
     min-height: 40vh;
+    flex-wrap: wrap;
 }
 
 .iconPlus{
@@ -363,9 +428,11 @@ li{
 
 .mainProducts{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 190px;
     margin-top: 60px;
     min-height: 40vh;
+    flex-wrap: wrap;
 }
 
 .productImg{
@@ -393,6 +460,8 @@ li{
     justify-content: space-around;
     gap: 50px;
     font-family: Aleo, 'sans-serif';
+    flex-wrap: wrap;
+
 }
 
 .linksFooter{

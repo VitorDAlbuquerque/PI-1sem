@@ -47,7 +47,7 @@ function handleHeartIcon1(){
         } else if(heartIcon.classList.contains('fa-regular')){
             heartIcon.classList.add("fa-solid")
             heartIcon.classList.remove("fa-regular")
-            productsLiked.push({name: 'colar ocean life', urfFile: '/images/colar ocean life.jpg'})
+            productsLiked.push({name: 'colar ocean life', urfFile: 'images/colar ocean life.jpg'})
 
             const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'colar ocean life'))
             const newLi = document.createElement('li')
@@ -56,7 +56,7 @@ function handleHeartIcon1(){
             newLi.setAttribute("id", 'likedLi')
             newLi.innerHTML = Object.values(productsLiked[index])
             list.appendChild(newLi);
-            newLi.innerHTML = `<img src="/images/colar ocean life.jpg" alt=""> <p>colar ocean life</p>`
+            newLi.innerHTML = `<img src="images/colar ocean life.jpg" alt=""> <p>colar ocean life</p>`
 
             console.log(newLi)
         }
@@ -83,7 +83,7 @@ function handleHeartIcon2(){
             heartIcon.classList.remove("fa-regular")
             productsLiked.push({
                 name: 'anel sunshine',
-                urfFile: '/images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp'
+                urfFile: 'images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp'
             })
             const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'anel sunshine'))
             const newLi = document.createElement('li')
@@ -92,7 +92,7 @@ function handleHeartIcon2(){
 
             newLi.innerHTML = Object.values(productsLiked[index])
             list.appendChild(newLi);
-            newLi.innerHTML = `<img src="/images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt=""> <p>anel sunshine</p>`
+            newLi.innerHTML = `<img src="images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt=""> <p>anel sunshine</p>`
 
             console.log(newLi)
         }
@@ -120,7 +120,7 @@ function handleHeartIcon3(){
             heartIcon.classList.remove("fa-regular")
             productsLiked.push({
                 name: 'colar tubarão',
-                urfFile: '/images/colar ocean life.webp'
+                urfFile: 'images/colar ocean life.webp'
             })
 
 
@@ -131,7 +131,7 @@ function handleHeartIcon3(){
 
             newLi.innerHTML = Object.values(productsLiked[index])
             list.appendChild(newLi);
-            newLi.innerHTML = `<img src="/images/colar ocean life.webp" alt=""> <p>colar tubarão</p>`
+            newLi.innerHTML = `<img src="images/colar ocean life.webp" alt=""> <p>colar tubarão</p>`
 
 
             console.log(newLi)
