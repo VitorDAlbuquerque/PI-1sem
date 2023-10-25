@@ -5,7 +5,7 @@
 
 ## Produtos
 > [!NOTE]
-> Obs: 100% do dinheiro arrecadado será doado para ONGS responsáveis pela conservação do mar. EX: Instituto Amares e Instituto COMAR.
+> 100% do dinheiro arrecadado será doado para ONGS responsáveis pela conservação do mar. EX: Instituto Amares e Instituto COMAR.
 
 - Colar
 - Pulseira 
