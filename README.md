@@ -1,4 +1,3 @@
-# PI-1sem
 # **Glowing Sea**
 > Em prol da biodiversidade marinha
 <p> Projeto voluntário com o intuito de arrecadar fundos para a melhora da qualidade de vida de baixo d'agua. </p>
