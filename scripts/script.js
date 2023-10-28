@@ -1,4 +1,9 @@
 var productsLiked = [];
+var allProducts = [{name: 'colar ocean life', urlfile: 'images/colar ocean life.jpg'},
+ {name: 'anel sunshine', urlfile: 'images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp'}, 
+ {name: 'colar tubarão', urlfile: 'images/colar ocean life.webp'}]
+
+var foundedProducts = [];
 
 function slideBag(){
     const bag = document.getElementById('bag');
@@ -133,8 +138,44 @@ function handleHeartIcon3(){
             list.appendChild(newLi);
             newLi.innerHTML = `<img src="images/colar ocean life.webp" alt=""> <p>colar tubarão</p>`
 
-
             console.log(newLi)
         }
     }
+}
+
+function searchProducts(){
+    var searchInputValue = document.getElementById('searchInput').value
+
+    var result = document.getElementById('resultSearch').innerHTML = allProducts.filter((result) => result.name == searchInputValue)
+
+    console.log(result)
+
+
+}
+
+function innerResultSearch() {
+    const list = document.getElementById('resultSearch');
+
+    
+    for(var i = 0; i< allProducts.length; i++){
+        const newLi = document.createElement('li')
+        newLi.setAttribute("id", 'resultLi')
+        newLi.setAttribute("class", 'resultLi')
+
+        
+        newLi.innerHTML = `<img src="${allProducts[i].urlfile}" alt=""> <p>${allProducts[i].name}</p>`
+        list.appendChild(newLi);
+    }
+}
+
+function searchFocus(){
+    const list = document.getElementById('resultSearch');
+    list.style.display = 'flex'
+}
+
+function searchOutFocus(){
+
+    const list = document.getElementById('resultSearch');
+
+    list.style.display = 'none'
 }
