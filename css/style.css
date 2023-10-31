@@ -81,7 +81,7 @@ body {
 }
 
 .resultSearch{
-    min-height: 100px;
+    min-height: 50px;
     background: #D9D9D9;
     min-width: 450px;
     position: absolute;

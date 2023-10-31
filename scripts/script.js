@@ -128,7 +128,6 @@ function handleHeartIcon3(){
                 urfFile: 'images/colar ocean life.webp'
             })
 
-
             const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'colar tubarão'))
             const newLi = document.createElement('li')
             newLi.setAttribute("id", 'likedLi')
@@ -147,15 +146,14 @@ function searchProducts(){
     var searchInputValue = document.getElementById('searchInput').value
 
     var result = document.getElementById('resultSearch').innerHTML = allProducts.filter((result) => result.name == searchInputValue)
-
-    console.log(result)
-
-
+    console.log(searchInputValue)
+    for(var i = 0; i < result.length; i++){
+        document.getElementById('resultSearch').innerHTML = `<div class='resultLi'><img src="${result[i].urlfile}" alt=""> <p>${result[i].name}</p></div>`
+    }
 }
 
 function innerResultSearch() {
     const list = document.getElementById('resultSearch');
-
     
     for(var i = 0; i< allProducts.length; i++){
         const newLi = document.createElement('li')
