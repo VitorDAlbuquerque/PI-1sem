@@ -1,5 +1,10 @@
 var productsLiked = [];
 
+const local = JSON.parse(localStorage.getItem('likedItens'))
+if(local){
+    productsLiked = local
+}
+
 var allProducts = [
     {
         id: 1, 
@@ -174,8 +179,12 @@ function handleHeartIcon(indice){
             productsLiked.splice(index, 1)
 
             if (list.hasChildNodes()) {
-                list.removeChild(list.children[index]);
+                //list.removeChild(list.children[index]);
             }
+
+            const local = localStorage('likedItens')
+
+            local.splice(index,1, '')
 
         } else if(heartIcon.classList.contains('fa-regular')){
             heartIcon.classList.add("fa-solid")
@@ -210,7 +219,11 @@ function handleHeartIcon(indice){
             list.appendChild(newLi);
             for(var i = 0; i<productsLiked.length; i++){
                 newLi.innerHTML = `<img src="${productsLiked[index].urfFile}" alt=""> <p>${productsLiked[i].name}</p>`
+                
+                localStorage.setItem('likedItens', JSON.stringify(productsLiked))
+
             }
+            console.log(productsLiked)
         }
     }
 }
@@ -251,6 +264,16 @@ function searchOutFocus(){
     list.style.display = 'none'
 }
 
+function handleLoadProduct(index){
+    const heartIcon = document.getElementById(`heartIcon${index}`)
+    if(productsLiked[index]){
+        if(heartIcon.classList.contains('fa-regular')){
+            heartIcon.classList.add("fa-solid")
+            heartIcon.classList.remove("fa-regular")
+        }
+    }
+}
+
 function innerProductsHtml(){
     const mainProducts = document.getElementById('mainProducts')
     for(var i = 0; i <allProducts.length;i++){
@@ -268,6 +291,6 @@ function innerProductsHtml(){
             </div>
         `
         mainProducts.appendChild(newDivProduct);
-        
+        handleLoadProduct(i+1)
     }
 }
