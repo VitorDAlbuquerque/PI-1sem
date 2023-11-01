@@ -1,0 +1,29 @@
+.footer{
+    background: #A61C35;
+    color: #F2EFEB;
+    margin-top: 70px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    font-family: Aleo, 'sans-serif';
+    flex-wrap: wrap;
+
+}
+
+.linksFooter{
+    font-weight: 300;
+    font-family: Montserrat, 'sans-serif';
+}
+
+.redes {
+    display: flex;
+    align-items: end;
+}
+
+.divIncosFooter{
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+    margin-top: 5px;
+}

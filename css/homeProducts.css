@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&family=Montserrat:wght@200&display=swap');
+
+@font-face {
+    font-family: telegrafBold;
+    src: url(../fonts/PPTelegraf-UltraBold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: telegraf;
+    src: url(../fonts/PPTelegraf-Regular.otf);
+}
+
+@font-face {
+    font-family: garet;
+    src: url(../fonts/Garet-Book.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: jost, 'sans-serif';
+    background:  #F2EFEB;
+}
+
+.main{
+    min-height: 90vh;
+}
+
+.mainTitle{
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mainTitle:first-child {
+    margin-left: auto;
+}
+
+.mainTitle:last-child {
+    margin-right: auto;
+}
+
+.btnFilter{
+    background: #F25E3D;
+    border: none;
+    color: #F2EFEB;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+.mainContent{
+    padding: 10px 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.sideCategory{
+    background: #D9D9D9;
+    height: 350px;
+    max-width: 150px;
+    padding: 30px;
+}
+
+.sideCategory>p{
+    text-decoration: underline;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sideCategory>ul{
+    margin-bottom: 15px;
+}
+
+.sideCategory>ul>li{
+    display: flex;
+    gap: 5px;
+}
+
+.allProducts{
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.productImg{
+    height: 250px;
+    border-radius: 15px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.productImg:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.199);
+}
+
+.productTitle{
+    font-size: 31px;
+}
+
+.oldValue{
+    font-size: 13px;
+}

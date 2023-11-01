@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bela Wonder</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="../css/cssDefaults/navBar.css">
+    <link rel="stylesheet" href="../css/cssDefaults/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="scripts/script.js"></script>
 </head>
-<body onload="innerResultSearch()">
+<body onload="innerProductsHtml()">
     <div class="navbar">
         <img class="imgLogo" src="images/logo sem fundo.png" alt="">
         <div class="divInputSearch">
@@ -53,11 +55,11 @@
         </div>
     </div>
     <div class="navbarLinks">
-        <li class="liNav">INÍCIO</li>
-        <li class="liNav">CATEGORIAS</li>
-        <li class="liNav">NOVIDADES</li>
-        <li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li>
-        <li class="liNav">RASTREAMENTO DE PEDIDOS</li>
+        <a href="/pages/homeProducts.html"><li class="liNav">INÍCIO</li></a>
+        <a href="/pages/homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
+        <a href="/pages/homeProducts.html"><li class="liNav">NOVIDADES</li></a>
+        <a href="/pages/homeProducts.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
+        <a href="/pages/homeProducts.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
     </div>
     <div class="main">
         <div class="mainTitle">
@@ -142,43 +144,8 @@
         </div>
     </div>
 
-    <div class="mainProducts">
-
-        <div class="product">
-            <div >
-                <img class="productImg" src="images/colar ocean life.jpg" alt="">
-            </div>
-            <div class="productInfo">
-                <p class="heartIcon" ><i onclick="handleHeartIcon1()" id="heartIcon1" class="fa-regular fa-heart"></i></p>
-
-                <h2 class="productTitle">colar ocean life</h2>
-                <p class="productDescription">Rastreie uma tartaruga</p>
-            </div>
-        </div>
-
-
-        <div class="product">
-            <div >
-                <img class="productImg" src="images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt="">
-            </div>
-            <div class="productInfo">
-                <p class="heartIcon" ><i id="heartIcon2" onclick="handleHeartIcon2()" class="fa-regular fa-heart product"></i></p>
-
-                <h2 class="productTitle">anel sunshine</h2>
-                <p class="productDescription">Monitorar Golfinho Resgatado</p>
-            </div>
-        </div>
-
-        <div class="product">
-            <div >
-                <img class="productImg" src="images/colar ocean life.webp" alt="">
-            </div>
-            <div class="productInfo">
-                <p class="heartIcon" ><i onclick="handleHeartIcon3()" id="heartIcon3" class="fa-regular fa-heart product"></i></p>
-                <h2 class="productTitle">colar tubarão</h2>
-                <p class="productDescription">Rastreie Um Tubarão Resgatado</p>
-            </div>
-        </div>
+    <div class="mainProducts" id="mainProducts">
+        
     </div>
 
     <div class="footer">

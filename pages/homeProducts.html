@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bela Wonder</title>
+    <link rel="stylesheet" href="../css/cssDefaults/navBar.css">
+    <link rel="stylesheet" href="../css/cssDefaults/footer.css">
+    <link rel="stylesheet" href="../css/homeProducts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <img class="imgLogo" src="../images/logo sem fundo.png" alt="">
+        <div class="divInputSearch">
+            <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" onblur="searchOutFocus()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="resultSearch" id="resultSearch">
+            </div>
+        </div>
+        <div class="buttonsNavbar">
+            <p class="btnNavbar"><i class="fa-regular fa-circle-question"></i></p>
+            <p class="btnNavbar"><i class="fa-regular fa-circle-user"></i></p>
+            <p class="btnNavbar" onclick='slideLikes()'><i class="fa-regular fa-heart"></i></p>
+            <p class="btnNavbar" onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i></p>
+        </div>
+    </div>
+    <div class="bag" id="bag">
+        <div class="bagContent">
+            <div class="bagTitle">
+                <h2>Sacola</h2>
+                <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+            <div class="divProductsOnBag">
+            </div>
+        </div>
+    </div>
+    <div class="likes" id="likes">
+        <div class="likesContent">
+            <div class="bagTitle">
+                <h2>Favoritos</h2>
+                <p class="closeBag" onclick="closeLikes()"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+            <div class="divProductsLiked">
+                <ul id="listLikes" class="listLiked">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="navbarLinks">
+        <a class="linkNav" href="/index.html"><li class="liNav">INÍCIO</li></a>
+        <a class="linkNav"href="/index.html"><li class="liNav">CATEGORIAS</li></a>
+        <a class="linkNav"href="/index.html"><li class="liNav">NOVIDADES</li></a>
+        <a class="linkNav"href="/index.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
+        <a class="linkNav"href="/index.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
+    </div>
+    <div class="main">
+        <div class="mainTitle">
+            <p>Home / Produtos</p>
+            <h2>Nossos produtos</h2>
+            
+            <p>Ordenar por: <button class="btnFilter">Ordem alfabetica, A-Z</button></p>
+        </div>
+        <div class="mainContent">
+            <div class="sideCategory">
+                <p>CATEGORIAS</p>
+                <ul>
+                    <li><input type="checkbox" name="" id="">Colares</li>
+                    <li><input type="checkbox" name="" id="">Pulseiras</li>
+                    <li><input type="checkbox" name="" id="">Anéis</li>
+                    <li><input type="checkbox" name="" id="">Brincos</li>
+                    <li><input type="checkbox" name="" id="">Berloques</li>
+                    <li><input type="checkbox" name="" id="">Outros</li>
+                </ul>
+                <p>DISPONIBILIDADE</p>
+                <ul>
+                    <li><input type="checkbox" name="" id="">Em estoque</li>
+                    <li><input type="checkbox" name="" id="">Fora de estoque</li>
+                </ul>
+            </div>
+            <div class="allProducts">
+                <div class="product">
+                    <div >
+                        <img class="productImg" src="../images/colar ocean life.jpg" alt="">
+                    </div>
+                    <div class="productInfo">
+                        <p class="heartIcon" ><i onclick="handleHeartIcon1()" id="heartIcon1" class="fa-regular fa-heart"></i></p>
+        
+                        <h2 class="productTitle">colar ocean life</h2>
+                        <div class="productValue">
+                            <p class="oldValue"><del>R$ 199,00</del></p>
+                            <p>R$ 147,00</p>
+                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="product">
+                    <div >
+                        <img class="productImg" src="../images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt="">
+                    </div>
+                    <div class="productInfo">
+                        <p class="heartIcon" ><i id="heartIcon2" onclick="handleHeartIcon2()" class="fa-regular fa-heart product"></i></p>
+        
+                        <h2 class="productTitle">anel sunshine</h2>
+                        <div class="productValue">
+                            <p class="oldValue"><del>R$ 199,00</del></p>
+                            <p>R$ 147,00</p>
+                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product">
+                    <div>
+                        <img class="productImg" src="../images/colar ocean life.webp" alt="">
+                    </div>
+                    <div class="productInfo">
+                        <p class="heartIcon" ><i onclick="handleHeartIcon3()" id="heartIcon3" class="fa-regular fa-heart product"></i></p>
+                        <h2 class="productTitle">colar tubarão</h2>
+                        <div class="productValue">
+                            <p class="oldValue"><del>R$ 199,00</del></p>
+                            <p>R$ 147,00</p>
+                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div >
+                        <img class="productImg" src="../images/colar ocean life.jpg" alt="">
+                    </div>
+                    <div class="productInfo">
+                        <p class="heartIcon" ><i onclick="handleHeartIcon1()" id="heartIcon1" class="fa-regular fa-heart"></i></p>
+        
+                        <h2 class="productTitle">colar ocean life</h2>
+                        <div class="productValue">
+                            <p class="oldValue"><del>R$ 199,00</del></p>
+                            <p>R$ 147,00</p>
+                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div class="product">
+                    <div >
+                        <img class="productImg" src="../images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt="">
+                    </div>
+                    <div class="productInfo">
+                        <p class="heartIcon" ><i id="heartIcon2" onclick="handleHeartIcon2()" class="fa-regular fa-heart product"></i></p>
+        
+                        <h2 class="productTitle">anel sunshine</h2>
+                        <div class="productValue">
+                            <p class="oldValue"><del>R$ 199,00</del></p>
+                            <p>R$ 147,00</p>
+                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product">
+                    <div>
+                        <img class="productImg" src="../images/colar ocean life.webp" alt="">
+                    </div>
+                    <div class="productInfo">
+                        <p class="heartIcon" ><i onclick="handleHeartIcon3()" id="heartIcon3" class="fa-regular fa-heart product"></i></p>
+                        <h2 class="productTitle">colar tubarão</h2>
+                        <div class="productValue">
+                            <p class="oldValue"><del>R$ 199,00</del></p>
+                            <p>R$ 147,00</p>
+                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="footer">
+        <div class="contato">
+            <h1 class="titleFooter">CONTATO</h1>
+            <div class="linksFooter">
+                <li>Endereço: Av. Ana Costa 484 - Santos-SP, CEP: 11060-002</li>
+                <li>E-mail: sac@belawonder.com</li>
+                <li>Telefone: (13) 99660-8197</li>
+                <li>Horário de Atendimento: Segunda a Sexta das 09h às 16h</li>
+            </div>
+            
+        </div>
+        <div class="institucional">
+            <h1 class="titleFooter">INSTITUCIONAL</h1>
+            <div class="linksFooter">
+                <li>Política de Reembolso</li>
+                <li>Política de Frete e Entrega</li>
+                <li>Política de privacidade</li>
+                <li>Termos de Serviço</li>
+                <li>Perguntas Frequentes</li>
+            </div>
+            
+        </div>
+        <div class="redes">
+            <div class="redesContent">
+                <h3>NOSSAS REDES SOCIAIS</h3>
+                <div class="divIncosFooter">
+                    <i class="fa-brands fa-square-whatsapp"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

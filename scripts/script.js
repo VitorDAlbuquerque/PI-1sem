@@ -1,7 +1,26 @@
 var productsLiked = [];
-var allProducts = [{name: 'colar ocean life', urlfile: 'images/colar ocean life.jpg'},
- {name: 'anel sunshine', urlfile: 'images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp'}, 
- {name: 'colar tubarão', urlfile: 'images/colar ocean life.webp'}]
+
+var allProducts = [
+    {
+        id: 1, 
+        name: 'colar ocean life',
+        description: 'Rastreie uma tartaruga',
+        urlfile: 'images/colar ocean life.jpg'
+    },
+
+    {
+        id: 2, 
+        name: 'anel sunshine', 
+        description: 'Monitorar Golfinho Resgatado',
+        urlfile: 'images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp'
+    }, 
+    {
+        id: 3, 
+        name: 'colar tubarão', 
+        description: 'Rastreie Um Tubarão Resgatado',
+        urlfile: 'images/colar ocean life.webp'
+    }
+]
 
 var foundedProducts = [];
 
@@ -35,7 +54,7 @@ function closeLikes(){
     }
 }
 
-function handleHeartIcon1(){
+/*function handleHeartIcon1(){
     const heartIcon = document.getElementById('heartIcon1')
     if(heartIcon){
         const list = document.getElementById('listLikes');
@@ -140,6 +159,60 @@ function handleHeartIcon3(){
             console.log(newLi)
         }
     }
+}*/
+
+function handleHeartIcon(indice){
+    
+    const heartIcon = document.getElementById(`heartIcon${indice}`)
+    if(heartIcon){
+        const list = document.getElementById('listLikes');
+
+        if(heartIcon.classList.contains('fa-solid')){
+            heartIcon.classList.add("fa-regular")
+            heartIcon.classList.remove("fa-solid")
+            const index = productsLiked.indexOf(productsLiked.find(({id}) => id === indice))
+            productsLiked.splice(index, 1)
+
+            if (list.hasChildNodes()) {
+                list.removeChild(list.children[index]);
+            }
+
+        } else if(heartIcon.classList.contains('fa-regular')){
+            heartIcon.classList.add("fa-solid")
+            heartIcon.classList.remove("fa-regular")
+            if(indice == 1){
+                productsLiked.push({
+                    id: indice,
+                    name: allProducts[0].name,
+                    urfFile: allProducts[0].urlfile
+                })
+            } else if(indice == 2){
+                productsLiked.push({
+                    id: indice,
+                    name: allProducts[1].name,
+                    urfFile: allProducts[1].urlfile
+                })
+            } else if(indice == 3){
+                productsLiked.push({
+                    id: indice,
+                    name: allProducts[2].name,
+                    urfFile: allProducts[2].urlfile
+                })
+            }
+
+            const index = productsLiked.indexOf(productsLiked.find(({id}) => id === indice))
+            const newLi = document.createElement('li')
+            newLi.setAttribute("id", 'likedLi')
+            newLi.setAttribute("class", "liLiked")
+
+            newLi.innerHTML = Object.values(productsLiked[index])
+
+            list.appendChild(newLi);
+            for(var i = 0; i<productsLiked.length; i++){
+                newLi.innerHTML = `<img src="${productsLiked[index].urfFile}" alt=""> <p>${productsLiked[i].name}</p>`
+            }
+        }
+    }
 }
 
 function searchProducts(){
@@ -176,4 +249,25 @@ function searchOutFocus(){
     const list = document.getElementById('resultSearch');
 
     list.style.display = 'none'
+}
+
+function innerProductsHtml(){
+    const mainProducts = document.getElementById('mainProducts')
+    for(var i = 0; i <allProducts.length;i++){
+        const newDivProduct = document.createElement('div')
+        
+        newDivProduct.innerHTML = `
+            <div>
+                <img class="productImg" src="${allProducts[i].urlfile}" alt="">
+            </div>
+            <div class="productInfo">
+                <p class="heartIcon" ><i id="heartIcon${allProducts[i].id}" onclick="handleHeartIcon(${allProducts[i].id})" class="fa-regular fa-heart product"></i></p>
+
+                <h2 class="productTitle">${allProducts[i].name}</h2>
+                <p class="productDescription">${allProducts[i].description}</p>
+            </div>
+        `
+        mainProducts.appendChild(newDivProduct);
+        
+    }
 }
