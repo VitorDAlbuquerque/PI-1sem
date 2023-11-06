@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bela Wonder</title>
+    <title>Glowing Sea</title>
     <link rel="stylesheet" href="../css/product.css">
     <link rel="stylesheet" href="../css/cssDefaults/navBar.css">
     <link rel="stylesheet" href="../css/cssDefaults/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="scripts/script.js"></script>
+    <script src="../scripts/script.js"></script>
 </head>
-<body>
+<body onload="innerProductInfoHtml('product')">
     <div class="navbar">
-        <img class="imgLogo" src="../images/logo sem fundo.png" alt="">
+        <img class="imgLogo" src="images/logo novo sem fundo.png" alt="">
+
         <div class="divInputSearch">
             <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" onblur="searchOutFocus()">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -33,6 +34,8 @@
                 <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
             </div>
             <div class="divProductsOnBag">
+                <ul id="listCart" class="listLiked">
+                </ul>
             </div>
         </div>
     </div>
@@ -56,7 +59,10 @@
         <a class="linkNav"href="/index.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
     </div>
     <div class="main">
-
+        <div class="product" id="product">
+            
+            
+        </div>
     </div>
     <div class="footer">
         <div class="contato">

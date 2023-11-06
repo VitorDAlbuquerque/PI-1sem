@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bela Wonder</title>
+    <title>Glowing Sea</title>
     <link rel="stylesheet" href="../css/cssDefaults/navBar.css">
     <link rel="stylesheet" href="../css/cssDefaults/footer.css">
     <link rel="stylesheet" href="../css/homeProducts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../scripts/script.js"></script>
 </head>
-<body>
+<body onload="innerProductsHtml('homeProducts')">
     <div class="navbar">
-        <img class="imgLogo" src="../images/logo sem fundo.png" alt="">
+        <img class="imgLogo" src="images/logo novo sem fundo.png" alt="">
+
         <div class="divInputSearch">
             <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" onblur="searchOutFocus()">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -33,6 +34,8 @@
                 <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
             </div>
             <div class="divProductsOnBag">
+                <ul id="listCart" class="listLiked">
+                </ul>
             </div>
         </div>
     </div>
@@ -72,111 +75,17 @@
                     <li><input type="checkbox" name="" id="">Brincos</li>
                     <li><input type="checkbox" name="" id="">Berloques</li>
                     <li><input type="checkbox" name="" id="">Outros</li>
-                </ul>
+                </ul><a href=""></a>
                 <p>DISPONIBILIDADE</p>
                 <ul>
                     <li><input type="checkbox" name="" id="">Em estoque</li>
                     <li><input type="checkbox" name="" id="">Fora de estoque</li>
                 </ul>
             </div>
-            <div class="allProducts">
-                <div class="product">
-                    <div >
-                        <img class="productImg" src="../images/colar ocean life.jpg" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <p class="heartIcon" ><i onclick="handleHeartIcon1()" id="heartIcon1" class="fa-regular fa-heart"></i></p>
-        
-                        <h2 class="productTitle">colar ocean life</h2>
-                        <div class="productValue">
-                            <p class="oldValue"><del>R$ 199,00</del></p>
-                            <p>R$ 147,00</p>
-                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
-                        </div>
-                    </div>
-                </div>
-        
-        
-                <div class="product">
-                    <div >
-                        <img class="productImg" src="../images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <p class="heartIcon" ><i id="heartIcon2" onclick="handleHeartIcon2()" class="fa-regular fa-heart product"></i></p>
-        
-                        <h2 class="productTitle">anel sunshine</h2>
-                        <div class="productValue">
-                            <p class="oldValue"><del>R$ 199,00</del></p>
-                            <p>R$ 147,00</p>
-                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="product">
-                    <div>
-                        <img class="productImg" src="../images/colar ocean life.webp" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <p class="heartIcon" ><i onclick="handleHeartIcon3()" id="heartIcon3" class="fa-regular fa-heart product"></i></p>
-                        <h2 class="productTitle">colar tubarão</h2>
-                        <div class="productValue">
-                            <p class="oldValue"><del>R$ 199,00</del></p>
-                            <p>R$ 147,00</p>
-                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div >
-                        <img class="productImg" src="../images/colar ocean life.jpg" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <p class="heartIcon" ><i onclick="handleHeartIcon1()" id="heartIcon1" class="fa-regular fa-heart"></i></p>
-        
-                        <h2 class="productTitle">colar ocean life</h2>
-                        <div class="productValue">
-                            <p class="oldValue"><del>R$ 199,00</del></p>
-                            <p>R$ 147,00</p>
-                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
-                        </div>
-                    </div>
-                </div>
-        
-        
-                <div class="product">
-                    <div >
-                        <img class="productImg" src="../images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <p class="heartIcon" ><i id="heartIcon2" onclick="handleHeartIcon2()" class="fa-regular fa-heart product"></i></p>
-        
-                        <h2 class="productTitle">anel sunshine</h2>
-                        <div class="productValue">
-                            <p class="oldValue"><del>R$ 199,00</del></p>
-                            <p>R$ 147,00</p>
-                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="product">
-                    <div>
-                        <img class="productImg" src="../images/colar ocean life.webp" alt="">
-                    </div>
-                    <div class="productInfo">
-                        <p class="heartIcon" ><i onclick="handleHeartIcon3()" id="heartIcon3" class="fa-regular fa-heart product"></i></p>
-                        <h2 class="productTitle">colar tubarão</h2>
-                        <div class="productValue">
-                            <p class="oldValue"><del>R$ 199,00</del></p>
-                            <p>R$ 147,00</p>
-                            <p>ou apenas <strong>6x</strong> de <strong>R$ 27,84</strong></p>
-                        </div>
-                    </div>
-                </div>
+            <div class="allProducts" id="mainProducts">
+                
             </div>
         </div>
-        
     </div>
 
     <div class="footer">

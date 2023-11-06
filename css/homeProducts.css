@@ -62,7 +62,7 @@ body {
     padding: 10px 50px;
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 50px;
 }
 
 .sideCategory{
@@ -93,6 +93,11 @@ body {
     flex-wrap: wrap;
 }
 
+.heartIcon{
+    cursor: pointer;
+    width: 17px;
+}
+
 .productImg{
     height: 250px;
     border-radius: 15px;
@@ -106,6 +111,12 @@ body {
 
 .productTitle{
     font-size: 31px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    width: 250px;
+    max-height: 90px;
 }
 
 .oldValue{

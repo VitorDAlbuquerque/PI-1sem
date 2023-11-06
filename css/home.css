@@ -68,6 +68,17 @@ body {
 
 }
 
+@media screen and (max-width: 900px) {
+    .title{
+        font-size: 50px;
+        padding: 0 20px;
+    }
+    .description{
+        padding: 0 20px;
+    }
+    
+}
+
 .imageMainTitle{
     height: 100%;
     border-radius: 15px;
@@ -79,6 +90,7 @@ body {
     line-height: 1.2;
     font-family: telegraf;
     max-width: 500px;
+
 }
 
 .divButton{
@@ -98,6 +110,12 @@ body {
     transition: 0.2s;
 }
 
+@media screen and (max-width: 900px) {
+    .btnHelp{
+        margin-left: 20px;
+    }
+}
+
 .btnHelp:hover{
     filter: brightness(0.7);
 }
@@ -112,6 +130,12 @@ body {
 @media screen and (max-width: 900px) {
     .mainTitleRight{
         display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .mainTitleRight{
+        margin-bottom: 20px;
     }
 }
 
@@ -167,7 +191,7 @@ body {
     gap: 75px;
 }
 
-@media screen and (min-width: 1095px) {
+@media screen and (min-width: 1200px) {
     .promotes .cardPromote1:first-child {
         margin-left: auto;
     }
@@ -177,7 +201,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1095px) {
+@media screen and (max-width: 1200px) {
     .promotes{
         justify-content: center;
     }
@@ -263,11 +287,12 @@ body {
 
 .mainProducts{
     display: flex;
-    justify-content: center;
-    gap: 190px;
     margin-top: 60px;
+    gap: 190px;
     min-height: 40vh;
     flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .productImg{
@@ -282,6 +307,12 @@ body {
 }
 
 .productTitle{
-
     font-size: 31px;
+    width: 250px;
+    max-height: 90px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    cursor: pointer;
 }

@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bela Wonder</title>
+    <title>Glowing Sea</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="../css/cssDefaults/navBar.css">
     <link rel="stylesheet" href="../css/cssDefaults/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="scripts/script.js"></script>
 </head>
-<body onload="innerProductsHtml()">
+<body onload="innerProductsHtml('home')">
+    
     <div class="navbar">
-        <img class="imgLogo" src="images/logo sem fundo.png" alt="">
+        
+        <img class="imgLogo" src="images/logo novo sem fundo.png" alt="">
         <div class="divInputSearch">
             <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" onblur="searchOutFocus()">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -29,7 +31,35 @@
             <p class="btnNavbar" onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i></p>
         </div>
 
+        <p class="mobileBtnBars" onclick="slideMobileMenu()"><i class="fa-solid fa-bars"></i></p>
     </div>
+
+    <div class="mobileMenuSide" id="mobileMenuSide">
+        <div class="mobileMenuSideContentTitle">
+            <div class="mobileMenuTitle">
+                <h2>Glowing Sea</h2>
+                <p class="closeBag" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+        </div>
+        <div class="mobileMenuSideContent">
+            <ul class="listMobileMenu">
+                <li><i class="fa-regular fa-circle-user"></i>Perfil</li>
+                <li><i class="fa-regular fa-heart"></i>Favoritos</li>
+
+                <li><i class="fa-solid fa-bag-shopping"></i>Sacola</li>
+            </ul>
+            <hr>
+            <ul class="listMobileMenuNavigate">
+                <li><i class="fa-solid fa-house"></i>Início</li>
+                <li><i class="fa-solid fa-filter"></i>Categorias</li>
+                <li><i class="fa-solid fa-rocket"></i>Novidades</li>
+                <li><i class="fa-solid fa-gears"></i>Como as coisas funcionam</li>
+                <li><i class="fa-regular fa-map"></i>Rastrear pedidos</li>
+            </ul>
+            <img src="images/logo novo sem fundo.png" alt="">
+        </div>
+    </div>
+    
     <div class="bag" id="bag">
         <div class="bagContent">
             <div class="bagTitle">
@@ -37,7 +67,8 @@
                 <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
             </div>
             <div class="divProductsOnBag">
-                
+                <ul id="listCart" class="listLiked">
+                </ul>
             </div>
         </div>
     </div>
@@ -51,6 +82,7 @@
             <div class="divProductsLiked">
                 <ul id="listLikes" class="listLiked">
                 </ul>
+                
             </div>
         </div>
     </div>
@@ -61,6 +93,7 @@
         <a href="/pages/homeProducts.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
         <a href="/pages/homeProducts.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
     </div>
+    
     <div class="main">
         <div class="mainTitle">
             <div class="mainTitleLeft">
@@ -145,7 +178,7 @@
     </div>
 
     <div class="mainProducts" id="mainProducts">
-        
+
     </div>
 
     <div class="footer">
@@ -182,6 +215,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
