@@ -4,7 +4,7 @@ var productsOnCart = [];
 
 var currentProduct = ''
 
-function teste(){
+function setProducts(){
     const local = JSON.parse(localStorage.getItem('likedItens'))
     if(local){
         productsLiked = local
@@ -21,7 +21,6 @@ function teste(){
     }
     handleLoadProduct()
     onLoadCart()
-    innerResultSearch()
 }
 
 var allProducts = [
@@ -32,7 +31,9 @@ var allProducts = [
         urlfile: '../images/colar ocean life.jpg',
         oldValue: 199.00,
         currentValue: 147.00,
-        color: 'Prata'
+        color: 'Prata',
+        category: 'Colar',
+        inStock: true
     },
     {
         id: 1, 
@@ -41,7 +42,9 @@ var allProducts = [
         urlfile: '../images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp',
         oldValue: 199.00,
         currentValue: 147.00,
-        color: 'Prata'
+        color: 'Prata',
+        category: 'Anel',
+        inStock: true
     }, 
     {
         id: 2, 
@@ -50,7 +53,9 @@ var allProducts = [
         urlfile: '../images/colar ocean life.webp',
         oldValue: 199.00,
         currentValue: 147.00,
-        color: 'Prata'
+        color: 'Prata',
+        category: 'Colar',
+        inStock: true
     },
     {
         id: 3, 
@@ -59,14 +64,15 @@ var allProducts = [
         urlfile: '../images/foto 1.webp',
         oldValue: 199.00,
         currentValue: 147.00,
-        color: 'Prata'
+        color: 'Prata',
+        category: 'Colar',
+        inStock: true
     }
 ]
 
 var quant = 1;
 
-var foundedProducts = [];
-
+//DESLIZAR MENUS LATERAIS
 function slideBag(){
     const bag = document.getElementById('bag');
 
@@ -96,116 +102,11 @@ function closeLikes(){
         likes.style.width = '0'
     }
 }
-
-/*function handleHeartIcon1(){
-    const heartIcon = document.getElementById('heartIcon1')
-    if(heartIcon){
-        const list = document.getElementById('listLikes');
-
-        if(heartIcon.classList.contains('fa-solid')){
-            heartIcon.classList.add("fa-regular")
-            heartIcon.classList.remove("fa-solid")
-            const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'colar ocean life'))
-            productsLiked.splice(index, 1)
-
-            if (list.hasChildNodes()) {
-                list.removeChild(list.children[index]);
-            }
-        } else if(heartIcon.classList.contains('fa-regular')){
-            heartIcon.classList.add("fa-solid")
-            heartIcon.classList.remove("fa-regular")
-            productsLiked.push({name: 'colar ocean life', urfFile: 'images/colar ocean life.jpg'})
-
-            const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'colar ocean life'))
-            const newLi = document.createElement('li')
-
-            newLi.setAttribute("class", "liLiked")
-            newLi.setAttribute("id", 'likedLi')
-            newLi.innerHTML = Object.values(productsLiked[index])
-            list.appendChild(newLi);
-            newLi.innerHTML = `<img src="images/colar ocean life.jpg" alt=""> <p>colar ocean life</p>`
-
-            console.log(newLi)
-        }
-    }
-}
-
-function handleHeartIcon2(){
-    const heartIcon = document.getElementById('heartIcon2')
-    if(heartIcon){
-        const list = document.getElementById('listLikes');
-
-        if(heartIcon.classList.contains('fa-solid')){
-            heartIcon.classList.add("fa-regular")
-            heartIcon.classList.remove("fa-solid")
-
-            const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'anel sunshine'))
-            productsLiked.splice(index, 1)
-
-            if (list.hasChildNodes()) {
-                list.removeChild(list.children[index]);
-            }
-        } else if(heartIcon.classList.contains('fa-regular')){
-            heartIcon.classList.add("fa-solid")
-            heartIcon.classList.remove("fa-regular")
-            productsLiked.push({
-                name: 'anel sunshine',
-                urfFile: 'images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp'
-            })
-            const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'anel sunshine'))
-            const newLi = document.createElement('li')
-            newLi.setAttribute("id", 'likedLi')
-            newLi.setAttribute("class", "liLiked")
-
-            newLi.innerHTML = Object.values(productsLiked[index])
-            list.appendChild(newLi);
-            newLi.innerHTML = `<img src="images/anel-sunshine-monitorar-golfinho-resgatado-anel-sunshine-monitorar-golfinho-resgatado-bela-wonder-455883_450x.webp" alt=""> <p>anel sunshine</p>`
-
-            console.log(newLi)
-        }
-    }
-}
-
-function handleHeartIcon3(){
-    const heartIcon = document.getElementById('heartIcon3')
-    if(heartIcon){
-        const list = document.getElementById('listLikes');
-
-        if(heartIcon.classList.contains('fa-solid')){
-            heartIcon.classList.add("fa-regular")
-            heartIcon.classList.remove("fa-solid")
-            const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'colar tubarão'))
-            productsLiked.splice(index, 1)
+//DESLIZAR MENUS LATERAIS
 
 
-            if (list.hasChildNodes()) {
-                list.removeChild(list.children[index]);
-            }
-
-        } else if(heartIcon.classList.contains('fa-regular')){
-            heartIcon.classList.add("fa-solid")
-            heartIcon.classList.remove("fa-regular")
-            productsLiked.push({
-                name: 'colar tubarão',
-                urfFile: 'images/colar ocean life.webp'
-            })
-
-            const index = productsLiked.indexOf(productsLiked.find(({name}) => name === 'colar tubarão'))
-            const newLi = document.createElement('li')
-            newLi.setAttribute("id", 'likedLi')
-            newLi.setAttribute("class", "liLiked")
-
-            newLi.innerHTML = Object.values(productsLiked[index])
-            list.appendChild(newLi);
-            newLi.innerHTML = `<img src="images/colar ocean life.webp" alt=""> <p>colar tubarão</p>`
-
-            console.log(newLi)
-        }
-    }
-}*/
-
+//FAVORITAR E DESFAVORITAR PRODUTO
 function handleHeartIcon(indice){
-    
     const heartIcon = document.getElementById(`heartIcon${indice}`)
     if(heartIcon){
         const list = document.getElementById('listLikes');
@@ -230,7 +131,6 @@ function handleHeartIcon(indice){
                 name: allProducts[indice].name,
                 urfFile: allProducts[indice].urlfile
             })
-            
 
             const index = productsLiked.indexOf(productsLiked.find(({id}) => id === indice))
             const newLi = document.createElement('li')
@@ -247,7 +147,9 @@ function handleHeartIcon(indice){
         }
     }
 }
+//FAVORITAR E DESFAVORITAR PRODUTO
 
+//PROCURAR PRODUTOS
 function searchProducts(){
     var searchInputValue = document.getElementById('searchInput').value
 
@@ -257,7 +159,23 @@ function searchProducts(){
         document.getElementById('resultSearch').innerHTML = `<div class='resultLi'><img src="${result[i].urlfile}" alt=""> <p>${result[i].name}</p></div>`
     }
 }
+//PROCURAR PRODUTOS
 
+//MOSTRAR PESQUISA DE PRODUTOS
+function searchFocus(){
+    const list = document.getElementById('resultSearch');
+    list.style.display = 'flex'
+}
+//MOSTRAR PESQUISA DE PRODUTOS
+
+//OCULTAR PESQUISA DE PRODUTOS
+function searchOutFocus(){
+    const list = document.getElementById('resultSearch');
+    list.style.display = 'none'
+}
+//OCULTAR PESQUISA DE PRODUTOS
+
+/*
 function innerResultSearch() {
     const list = document.getElementById('resultSearch');
     
@@ -269,20 +187,12 @@ function innerResultSearch() {
         newLi.innerHTML = `<img src="${allProducts[i].urlfile}" alt=""> <p>${allProducts[i].name}</p>`
         list.appendChild(newLi);
     }
-}
+}*/
 
-function searchFocus(){
-    const list = document.getElementById('resultSearch');
-    list.style.display = 'flex'
-}
 
-function searchOutFocus(){
 
-    const list = document.getElementById('resultSearch');
 
-    list.style.display = 'none'
-}
-
+//CARREGAR PRODUTOS FAVORITOS
 function handleLoadProduct(){
     const list = document.getElementById('listLikes');
     console.log(productsLiked)
@@ -301,7 +211,6 @@ function handleLoadProduct(){
                     newLi.setAttribute("id", 'likedLi')
                     newLi.setAttribute("class", "liLiked")
                     newA.setAttribute("onclick", `attCurrentProduct(${productsLiked[i].id})`)
-
 
                     newA.setAttribute("href", "product.html")
 
@@ -328,11 +237,15 @@ function handleLoadProduct(){
         }
     }
 }
+//CARREGAR PRODUTOS FAVORITOS
 
+
+//MOSTRAR PRODUTOS
 function innerProductsHtml(page){
     const mainProducts = document.getElementById('mainProducts')
     for(var i = 0; i <allProducts.length;i++){
         const newDivProduct = document.createElement('div')
+        newDivProduct.setAttribute('id', 'newDivProduct')
         if(page == 'home'){
             newDivProduct.innerHTML = `
             <div>
@@ -346,7 +259,7 @@ function innerProductsHtml(page){
             </div>
             `
             if(i == 3){
-                teste()
+                setProducts()
                 return;
             }
         } else if(page == 'homeProducts'){
@@ -371,14 +284,56 @@ function innerProductsHtml(page){
         //localStorage.removeItem('likedItens')
         //console.log(`heartIcon${allProducts[i].id}`)
     }
-    teste()
+    setProducts()
+}
+//MOSTRAR PRODUTOS
+
+function getProductsByCategoty(category){   
+    const checkbox = document.getElementById(`checkbox${category}`)
+    const mainProducts = document.getElementById('mainProducts')
+
+    if(checkbox.checked){
+        mainProducts.innerHTML = ''
+        for(var i = 0; i < allProducts.length; i++){
+            
+            if(allProducts[i].category == category){
+                const newDivProduct = document.createElement('div')
+
+                newDivProduct.innerHTML = `
+                <div>
+                    <a href="product.html"><img class="productImg" onclick="attCurrentProduct(${allProducts[i].id})" src="${allProducts[i].urlfile}" alt=""></a>
+                </div>
+                <div class="productInfo">
+                    <p class="heartIcon" ><i id="heartIcon${allProducts[i].id}" onclick="handleHeartIcon(${allProducts[i].id})" class="fa-regular fa-heart product"></i></p>
+    
+                    <h2 class="productTitle" onclick="attCurrentProduct(${allProducts[i].id})"><a href="product.html">${allProducts[i].name}</a></h2>
+                    <div class="productValue">
+                        <p class="oldValue"><del>R$ ${allProducts[i].oldValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</del></p>
+                        <p>R$ ${allProducts[i].currentValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                        <p>ou apenas <strong>6x</strong> de <strong>R$ ${(allProducts[i].currentValue/6).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></p>
+                    </div>
+                </div>
+                `
+                mainProducts.appendChild(newDivProduct);
+
+            }
+
+        }
+        handleLoadProduct()
+    } else {
+        mainProducts.innerHTML = ''
+        innerProductsHtml('homeProducts')
+    }
 }
 
+//ALTERAR PRODUTO DA PAGINA ATUAL
 function attCurrentProduct(currentProductProp){
     currentProduct = currentProductProp
     localStorage.setItem('currentProduct', currentProduct)
 }
+//ALTERAR PRODUTO DA PAGINA ATUAL
 
+//MOSTRAR INFORMAÇÕES NA PAGINA DO PRODUTO
 function innerProductInfoHtml(){
     const current = localStorage.getItem('currentProduct')
 
@@ -464,9 +419,11 @@ function innerProductInfoHtml(){
     `
     divProduct.appendChild(newDivProduct)
 
-    teste()
+    setProducts()
 }
+//MOSTRAR INFORMAÇÕES NA PAGINA DO PRODUTO
 
+//DIMINUIR QUANTIDADE
 function lessQuant(){
     const quant = document.querySelector('#quant')
     
@@ -474,7 +431,9 @@ function lessQuant(){
         quant.value -= 1
     }
 }
+//DIMINUIR QUANTIDADE
 
+//ALMENTAR QUANTIDADE
 function plusQuant(){
     const quant = document.querySelector('#quant')
     
@@ -482,8 +441,9 @@ function plusQuant(){
         quant.value = Number(quant.value)+1
     }
 }
+//ALMENTAR QUANTIDADE
 
-
+//ADICIONAR PRODUTOS AO CARRINHO
 function addProductsOnCart(){
     const listCart = document.getElementById('listCart')
     productsOnCart.push({
@@ -504,7 +464,9 @@ function addProductsOnCart(){
 
     console.log(productsOnCart)
 }
+//ADICIONAR PRODUTOS AO CARRINHO
 
+//CARREGAR CARRINHO
 function onLoadCart() {
     const listCart = document.getElementById('listCart')
     
@@ -522,7 +484,9 @@ function onLoadCart() {
     }
     //localStorage.removeItem('productsOnCart') 
 }
+//CARREGAR CARRINHO
 
+//DESLIZAR MENU RESPONSIVO
 function slideMobileMenu(){
     const mobileMenuSide = document.getElementById('mobileMenuSide')
     if(mobileMenuSide){
@@ -536,3 +500,6 @@ function closeMobileMenu(){
         mobileMenuSide.style.width = '0'
     }
 }
+//DESLIZAR MENU RESPONSIVO
+
+

@@ -12,7 +12,7 @@
 </head>
 <body onload="innerProductsHtml('homeProducts')">
     <div class="navbar">
-        <img class="imgLogo" src="images/logo novo sem fundo.png" alt="">
+        <img class="imgLogo" src="../images/logo novo sem fundo.png" alt="">
 
         <div class="divInputSearch">
             <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" onblur="searchOutFocus()">
@@ -52,11 +52,11 @@
         </div>
     </div>
     <div class="navbarLinks">
-        <a class="linkNav" href="/index.html"><li class="liNav">INÍCIO</li></a>
-        <a class="linkNav"href="/index.html"><li class="liNav">CATEGORIAS</li></a>
-        <a class="linkNav"href="/index.html"><li class="liNav">NOVIDADES</li></a>
-        <a class="linkNav"href="/index.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
-        <a class="linkNav"href="/index.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
+        <a class="linkNav" href="../index.html"><li class="liNav">INÍCIO</li></a>
+        <a class="linkNav"href="homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
+        <a class="linkNav"href=""><li class="liNav">NOVIDADES</li></a>
+        <a class="linkNav"href=""><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
+        <a class="linkNav"href=""><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
     </div>
     <div class="main">
         <div class="mainTitle">
@@ -69,17 +69,17 @@
             <div class="sideCategory">
                 <p>CATEGORIAS</p>
                 <ul>
-                    <li><input type="checkbox" name="" id="">Colares</li>
-                    <li><input type="checkbox" name="" id="">Pulseiras</li>
-                    <li><input type="checkbox" name="" id="">Anéis</li>
-                    <li><input type="checkbox" name="" id="">Brincos</li>
-                    <li><input type="checkbox" name="" id="">Berloques</li>
-                    <li><input type="checkbox" name="" id="">Outros</li>
+                    <li><input type="radio" name="category" id="checkboxColar" onchange="getProductsByCategoty('Colar')" name="" id="">Colares</li>
+                    <li><input type="radio" name="category" id="checkboxPulseira" onchange="getProductsByCategoty('Pulseira')">Pulseiras</li>
+                    <li><input type="radio" name="category" id="checkboxAnel" onchange="getProductsByCategoty('Anel')">Anéis</li>
+                    <li><input type="radio" name="category" id="checkboxBrinco" onchange="getProductsByCategoty('Brinco')">Brincos</li>
+                    <li><input type="radio" name="category" id="checkboxBerloque" onchange="getProductsByCategoty('Berloque')">Berloques</li>
+                    <li><input type="radio" name="category" id="checkboxOutro" onchange="getProductsByCategoty('Outro')">Outros</li>
                 </ul><a href=""></a>
                 <p>DISPONIBILIDADE</p>
                 <ul>
-                    <li><input type="checkbox" name="" id="">Em estoque</li>
-                    <li><input type="checkbox" name="" id="">Fora de estoque</li>
+                    <li><input type="radio" name="estoque" id="">Em estoque</li>
+                    <li><input type="radio" name="estoque" id="">Fora de estoque</li>
                 </ul>
             </div>
             <div class="allProducts" id="mainProducts">
