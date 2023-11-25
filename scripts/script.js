@@ -514,4 +514,8 @@ function closeMobileMenu(){
 }
 //DESLIZAR MENU RESPONSIVO
 
+function learnAboutButton(){
+    window.location.href = "./pages/aboutDonations.html";
+}
+
 
