@@ -36,6 +36,10 @@ body {
     padding: 20px;
 }
 
+b{
+    color: #A61C35;
+}
+
 .mainContent{
     display: flex;
     align-items: center;
@@ -44,12 +48,15 @@ body {
 
 .mainContent>div{
     max-width: 850px;
+    
 }
 
 .mainContent>p{
     text-align: center;
     font-size: 22px;
     margin-top: 60px;
+    max-width: 850px;
+
 }
 
 .mainTitle{
