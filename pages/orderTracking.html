@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glowing Sea</title>
+    <link rel="stylesheet" href="../css/aboutDonations.css">
     <link rel="stylesheet" href="../css/cssDefaults/navBar.css">
     <link rel="stylesheet" href="../css/cssDefaults/footer.css">
-    <link rel="stylesheet" href="../css/homeProducts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../scripts/script.js"></script>
+
 </head>
-<body onload="innerProductsHtml('homeProducts')">
+<body onload="setProducts()">
     <div class="navbar">
         <img class="imgLogo" src="../images/logo novo sem fundo.png" alt="">
 
@@ -82,36 +83,84 @@
         <a class="linkNav"href="orderTracking.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
     </div>
     <div class="main">
-        <div class="mainTitle">
-            <p><a href="../index.html"><u>Início</u></a> / Produtos</p>
-            <h2>Nossos produtos</h2>
-            
-            <p>Ordenar por: <button class="btnFilter">Ordem alfabetica, A-Z</button></p>
-        </div>
         <div class="mainContent">
-            <div class="sideCategory">
-                <p>CATEGORIAS</p>
-                <ul>
-                    <li><input type="radio" name="category" id="checkboxAll" onchange="getProductsByCategoty('All')" checked>Todos</li>
-                    <li><input type="radio" name="category" id="checkboxColar" onchange="getProductsByCategoty('Colar')" name="" id="">Colares</li>
-                    <li><input type="radio" name="category" id="checkboxPulseira" onchange="getProductsByCategoty('Pulseira')">Pulseiras</li>
-                    <li><input type="radio" name="category" id="checkboxAnel" onchange="getProductsByCategoty('Anel')">Anéis</li>
-                    <li><input type="radio" name="category" id="checkboxBrinco" onchange="getProductsByCategoty('Brinco')">Brincos</li>
-                    <li><input type="radio" name="category" id="checkboxBerloque" onchange="getProductsByCategoty('Berloque')">Berloques</li>
-                    <li><input type="radio" name="category" id="checkboxOutro" onchange="getProductsByCategoty('Outro')">Outros</li>
-                </ul><a href=""></a>
-                <p>DISPONIBILIDADE</p>
-                <ul>
-                    <li><input type="radio" name="estoque" id="">Em estoque</li>
-                    <li><input type="radio" name="estoque" id="">Fora de estoque</li>
-                </ul>
+            <div class="mainTitle">
+                <h1>Rastreando Seu Pedido no Glowing Sea</h1>
+                <p><strong>Bem-vindo</strong> à sua experiência de compra no <strong>Glowing Sea</strong>, onde a
+                    transparência e a conscientização se encontram! Antes de começarmos a
+                    explorar como rastrear seu pedido, gostaríamos de destacar algumas
+                    informações importantes para tornar sua experiência ainda mais especial:</p>
             </div>
-            <div class="allProducts" id="mainProducts">
-                
+            
+            <div class="infos">
+                <div class="info">
+                    <p><strong>Frete Grátis para Todo o Brasil:</strong></p>
+                    <p>Em compras acima de R$ 199, o Glowing
+                        Sea oferece frete grátis para todo o
+                        Brasil. Queremos garantir que sua jóia
+                        temática de animais marinhos chegue até
+                        você de maneira conveniente e sem
+                        custos adicionais.</p>
+                </div>
+                <div class="info">
+                    <p><strong>Atendimento ao Cliente Via E-mail e WhatsApp:</strong></p>
+                    <p>Nosso compromisso com você vai além da
+                        compra. Em caso de dúvidas ou
+                        preocupações, nossa equipe de
+                        Atendimento ao Cliente está disponível
+                        via e-mail (sac@glowingsea.com) e
+                        WhatsApp (número disponível em nosso
+                        site).</p>
+                </div>
             </div>
-        </div>
-    </div>
+            <div class="aboutOrder">
+                <h1>Agora, vamos entender como rastrear a jornada da sua jóia:</h1>
 
+                <div class="steps">
+                    <div>
+                        <p><strong>1. Após a Compra:</strong></p>
+                        <p>Assim que sua compra for confirmada, você receberá um e-mail de
+                        confirmação contendo um número de rastreamento exclusivo. Este número é a
+                        chave para seguir cada passo do seu pedido.</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>2. Acessando o Site dos Correios:</strong></p>
+                        <p>Para rastrear seu pedido, acesse o site oficial dos Correios
+                        (www.correios.com.br) e insira o número de rastreamento na área designada.
+                        Lá, você encontrará informações detalhadas sobre o status atual, a localização
+                        e a previsão de entrega do seu pedido.</p>
+                    </div>
+
+                    <div>
+                        <p><strong>3. Rastreio do Animal Resgatado:</strong></p>
+                        <p>Além de rastrear seu pedido, você também pode acompanhar o impacto
+                        positivo que está gerando. Cada jóia Glowing Sea está associada a um animal
+                        marinho resgatado. Utilize o código exclusivo fornecido com sua jóia em nosso
+                        portal de rastreamento para seguir a história do animal que você ajudou a
+                        salvar.</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>4. Atualizações por E-mail e SMS:</strong></p>
+                        <p>Manteremos você informado durante todo o processo. Além do e-mail de
+                        confirmação, enviaremos atualizações regulares sobre o status do seu pedido.
+                        Caso prefira, opte por receber notificações por SMS para garantir que esteja
+                        sempre por dentro das novidades sobre sua jóia e seu impacto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                No <strong>Glowing Sea</strong>, acreditamos na importância de compartilhar cada etapa da jornada,
+                desde o pedido até o resgate marinho. Agradecemos por escolher <strong>Glowing Sea</strong>, onde
+                sua jóia não é apenas uma compra, mas uma contribuição valiosa para a preservação dos
+                oceanos. Sinta-se à vontade para entrar em contato com nosso Atendimento ao Cliente
+                para qualquer assistência adicional. <strong>Sua jornada única e significativa começa agora!</strong>
+            </p>
+        </div>
+        
+    </div>
     <div class="footer">
         <div class="contato">
             <h1 class="titleFooter">CONTATO</h1>

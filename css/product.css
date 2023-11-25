@@ -55,13 +55,20 @@ body {
 
 .productContent{
     display: flex;
-    height: 350px;
-    min-width: 900px;
+    flex-wrap: wrap;
+    min-height: 350px;
+    max-width: 900px;
     gap: 50px;
 }
 
 .currentPhoto>img{
     height: 350px;
+}
+
+@media screen and (max-width: 900px) {
+    .currentPhoto>img{
+        border-radius: 10px;
+    }
 }
 
 .nextPhoto{
@@ -72,6 +79,12 @@ body {
 
 .nextPhoto > img{
     height: 70px;
+}
+
+@media screen and (max-width: 900px) {
+    .nextPhoto{
+        flex-direction: row;
+    }
 }
 
 .prodTitle{
@@ -157,6 +170,11 @@ body {
     transition: 0.2s;
     cursor: pointer;
 }
+@media screen and (max-width: 900px) {
+    .btnAddCart{
+        margin-bottom: 20px;
+    }
+}
 
 .btnAddCart:hover{
     filter: brightness(0.7);
@@ -166,6 +184,11 @@ body {
     display: flex;
     justify-content: end;
     margin-top: 10px;
+}
+@media screen and (max-width: 900px) {
+    .parcelas{
+        margin-bottom: 20px;
+    }
 }
 
 .tablePar{

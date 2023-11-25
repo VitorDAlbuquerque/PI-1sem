@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glowing Sea</title>
+    <link rel="stylesheet" href="../css/aboutDonations.css">
     <link rel="stylesheet" href="../css/cssDefaults/navBar.css">
     <link rel="stylesheet" href="../css/cssDefaults/footer.css">
-    <link rel="stylesheet" href="../css/homeProducts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../scripts/script.js"></script>
+
 </head>
-<body onload="innerProductsHtml('homeProducts')">
+<body onload="setProducts()">
     <div class="navbar">
         <img class="imgLogo" src="../images/logo novo sem fundo.png" alt="">
 
@@ -82,36 +83,65 @@
         <a class="linkNav"href="orderTracking.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
     </div>
     <div class="main">
-        <div class="mainTitle">
-            <p><a href="../index.html"><u>Início</u></a> / Produtos</p>
-            <h2>Nossos produtos</h2>
-            
-            <p>Ordenar por: <button class="btnFilter">Ordem alfabetica, A-Z</button></p>
-        </div>
         <div class="mainContent">
-            <div class="sideCategory">
-                <p>CATEGORIAS</p>
-                <ul>
-                    <li><input type="radio" name="category" id="checkboxAll" onchange="getProductsByCategoty('All')" checked>Todos</li>
-                    <li><input type="radio" name="category" id="checkboxColar" onchange="getProductsByCategoty('Colar')" name="" id="">Colares</li>
-                    <li><input type="radio" name="category" id="checkboxPulseira" onchange="getProductsByCategoty('Pulseira')">Pulseiras</li>
-                    <li><input type="radio" name="category" id="checkboxAnel" onchange="getProductsByCategoty('Anel')">Anéis</li>
-                    <li><input type="radio" name="category" id="checkboxBrinco" onchange="getProductsByCategoty('Brinco')">Brincos</li>
-                    <li><input type="radio" name="category" id="checkboxBerloque" onchange="getProductsByCategoty('Berloque')">Berloques</li>
-                    <li><input type="radio" name="category" id="checkboxOutro" onchange="getProductsByCategoty('Outro')">Outros</li>
-                </ul><a href=""></a>
-                <p>DISPONIBILIDADE</p>
-                <ul>
-                    <li><input type="radio" name="estoque" id="">Em estoque</li>
-                    <li><input type="radio" name="estoque" id="">Fora de estoque</li>
-                </ul>
+            <div class="mainTitle">
+                <h1>Como Funcionam as Doações no Glowing Sea:</h1>
+                <h3>Salvando os Oceanos, Uma Jóia de Cada Vez</h3>
+                <p>Seja parte da diferença - na <strong>Glowing Sea</strong>, acreditamos no poder da conscientização e ação.
+                    Nossa missão não é apenas oferecer joias deslumbrantes de prata 102, mas também contribuir
+                    para a preservação dos animais marinhos e de seus habitats. Aqui está como funcionam as
+                    doações em cada compra:</p>
             </div>
-            <div class="allProducts" id="mainProducts">
-                
+            <div class="cards">
+                <div class="card">
+                    <p>Compromisso com a Preservação
+                        Marinha: Em cada compra feita no
+                        Glowing Sea, destinamos 30% dos lucros
+                        para organizações dedicadas ao resgate
+                        e preservação de animais marinhos.
+                        Estamos comprometidos em fazer a
+                        diferença e agir para garantir que nossos
+                        oceanos permaneçam vivos, vibrantes e
+                        cheios de vida.
+                        </p>
+                </div>
+                <div class="card">
+                    <p>Rastreie Seu Impacto: Ao adquirir uma jóia
+                        Glowing Sea, você não está apenas
+                        recebendo uma peça única e elegante, mas
+                        também se tornando parte de nossa missão.
+                        Oferecemos a oportunidade de rastrear o
+                        animal marinho que foi resgatado com a sua
+                        compra. Cada peça vem com um código exclusivo que permite que você siga a
+                        jornada do animal que ajudou a salvar.
+                        </p>
+                </div>
+                <div class="card">
+                    <p>Parcerias Significativas: Trabalhamos em
+                        estreita colaboração com organizações de
+                        conservação e resgate marinho, garantindo
+                        que nossas doações tenham um impacto real.
+                        Colaboramos com especialistas e defensores
+                        dedicados para apoiar projetos concretos e
+                        eficazes de preservação marinha.
+                        </p>
+                </div>
+                <div class="card">
+                    <p>Transparência Total: Acreditamos na
+                        transparência total. Regularmente
+                        atualizamos nossos clientes sobre o
+                        progresso das doações, mostrando como
+                        os fundos estão sendo utilizados para
+                        proteger e salvar a vida marinha.
+                        Queremos que você esteja totalmente
+                        informado sobre como sua contribuição
+                        está fazendo a diferença.                        
+                        </p>
+                </div>
             </div>
         </div>
+        
     </div>
-
     <div class="footer">
         <div class="contato">
             <h1 class="titleFooter">CONTATO</h1>

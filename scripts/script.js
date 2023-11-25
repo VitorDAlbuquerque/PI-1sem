@@ -33,7 +33,9 @@ var allProducts = [
         currentValue: 147.00,
         color: 'Prata',
         category: 'Colar',
-        inStock: true
+        inStock: true,
+        entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
     },
     {
         id: 1, 
@@ -44,7 +46,9 @@ var allProducts = [
         currentValue: 147.00,
         color: 'Prata',
         category: 'Anel',
-        inStock: true
+        inStock: true,
+        entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
     }, 
     {
         id: 2, 
@@ -55,7 +59,10 @@ var allProducts = [
         currentValue: 147.00,
         color: 'Prata',
         category: 'Colar',
-        inStock: true
+        inStock: true,
+        entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
+
     },
     {
         id: 3, 
@@ -66,7 +73,10 @@ var allProducts = [
         currentValue: 147.00,
         color: 'Prata',
         category: 'Colar',
-        inStock: true
+        inStock: true,
+        entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
+
     }
 ]
 
@@ -293,33 +303,38 @@ function getProductsByCategoty(category){
     const mainProducts = document.getElementById('mainProducts')
 
     if(checkbox.checked){
-        mainProducts.innerHTML = ''
-        for(var i = 0; i < allProducts.length; i++){
-            
-            if(allProducts[i].category == category){
-                const newDivProduct = document.createElement('div')
-
-                newDivProduct.innerHTML = `
-                <div>
-                    <a href="product.html"><img class="productImg" onclick="attCurrentProduct(${allProducts[i].id})" src="${allProducts[i].urlfile}" alt=""></a>
-                </div>
-                <div class="productInfo">
-                    <p class="heartIcon" ><i id="heartIcon${allProducts[i].id}" onclick="handleHeartIcon(${allProducts[i].id})" class="fa-regular fa-heart product"></i></p>
+        if(checkbox.id != 'checkboxAll'){
+            mainProducts.innerHTML = ''
+            for(var i = 0; i < allProducts.length; i++){
+                
+                if(allProducts[i].category == category){
+                    const newDivProduct = document.createElement('div')
     
-                    <h2 class="productTitle" onclick="attCurrentProduct(${allProducts[i].id})"><a href="product.html">${allProducts[i].name}</a></h2>
-                    <div class="productValue">
-                        <p class="oldValue"><del>R$ ${allProducts[i].oldValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</del></p>
-                        <p>R$ ${allProducts[i].currentValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
-                        <p>ou apenas <strong>6x</strong> de <strong>R$ ${(allProducts[i].currentValue/6).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></p>
+                    newDivProduct.innerHTML = `
+                    <div>
+                        <a href="product.html"><img class="productImg" onclick="attCurrentProduct(${allProducts[i].id})" src="${allProducts[i].urlfile}" alt=""></a>
                     </div>
-                </div>
-                `
-                mainProducts.appendChild(newDivProduct);
-
+                    <div class="productInfo">
+                        <p class="heartIcon" ><i id="heartIcon${allProducts[i].id}" onclick="handleHeartIcon(${allProducts[i].id})" class="fa-regular fa-heart product"></i></p>
+        
+                        <h2 class="productTitle" onclick="attCurrentProduct(${allProducts[i].id})"><a href="product.html">${allProducts[i].name}</a></h2>
+                        <div class="productValue">
+                            <p class="oldValue"><del>R$ ${allProducts[i].oldValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</del></p>
+                            <p>R$ ${allProducts[i].currentValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                            <p>ou apenas <strong>6x</strong> de <strong>R$ ${(allProducts[i].currentValue/6).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></p>
+                        </div>
+                    </div>
+                    `
+                    mainProducts.appendChild(newDivProduct);
+                }
             }
+            handleLoadProduct()
 
+        } else {
+            mainProducts.innerHTML = ''
+            innerProductsHtml('homeProducts')
         }
-        handleLoadProduct()
+        
     } else {
         mainProducts.innerHTML = ''
         innerProductsHtml('homeProducts')
@@ -344,7 +359,7 @@ function innerProductInfoHtml(){
     newDivProduct.innerHTML = `
     <div>
         <div class="urlProd">
-            <p><u>Home</u> / Colar - Sereia - (Monitorar Golfinho)</p>
+            <p><a href="homeProducts.html"><u>Produtos</u></a> / ${allProducts[current].name}</p>
         </div>
         <div class="productContent">
         
@@ -384,16 +399,16 @@ function innerProductInfoHtml(){
                     <th class="titlePar"><u>PARCELAS</u></th>
                 </tr>
                 <tr>
-                    <td>1x de R$ 147,00 sem juros</td>
-                    <td>4x de R$ 40,75</td>
+                    <td>1x de R$ ${(allProducts[current].currentValue).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})} sem juros</td>
+                    <td>4x de R$ ${(allProducts[current].currentValue/4).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                 </tr>
                 <tr>
-                    <td>2x de R$ 73,50 sem juros</td>
-                    <td>5x de R$ 33,02</td>
+                    <td>2x de R$ ${(allProducts[current].currentValue/2).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})} sem juros</td>
+                    <td>5x de R$ ${(allProducts[current].currentValue/5).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                 </tr>
                 <tr>
-                    <td>3x de R$ 49,00 sem juros</td>
-                    <td>6x de R$ 27,84</td>
+                    <td>3x de R$ ${(allProducts[current].currentValue/3).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})} sem juros</td>
+                    <td>6x de R$ ${(allProducts[current].currentValue/6).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                 </tr>
             </table>
         </div>
@@ -402,16 +417,13 @@ function innerProductInfoHtml(){
             <div>
                 <p><strong>Descrição:</strong></p>
                 <p>
-                    O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes
-                    intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um
-                    brilho duradouro e um toque de sofisticação.
+                    ${allProducts[current].entireDescription}
                 </p>
             </div>
             <div>
                 <p><strong>Especificações:</strong></p>
                 <p>
-                    Material: Prata 925 e Zircônia.
-                    Tamanho: 50 cm.
+                    ${allProducts[current].specifications}
                 </p>
             </div>
         </div>
