@@ -104,7 +104,7 @@ body {
     display: flex;
     gap: 100px;
     flex-wrap: wrap;
-    max-width: 1020px;
+    width: 1020px;
 }
 @media screen and (max-width: 900px) {
     .allProducts{
