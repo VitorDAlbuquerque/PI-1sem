@@ -385,10 +385,9 @@ function innerProductInfoHtml(){
         <div class="productContent">
         
             <div class="nextPhoto">
-                <img src="../images/foto 2.webp" alt="">
-                <img src="../images/foto 3.webp" alt="">
-                <img src="../images/foto 4.webp" alt="">
-                <img src="../images/foto 5.webp" alt="">
+                <img src="${allProducts[current].urlfile1}" alt="">
+                <img src="${allProducts[current].urlfile2}" alt="">
+                <img src="${allProducts[current].urlfile3}" alt="">
             </div>
             <div class="currentPhoto">
                 <img src="${allProducts[current].urlfile}" alt="">
