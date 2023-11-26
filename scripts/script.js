@@ -35,7 +35,10 @@ var allProducts = [
         category: 'Colar',
         inStock: true,
         entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
-        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.',
+        urlfile1: '../images/foto 2.webp',
+        urlfile2: '../images/foto 3.webp',
+        urlfile3: '../images/foto 3.webp'
     },
     {
         id: 1, 
@@ -48,7 +51,10 @@ var allProducts = [
         category: 'Anel',
         inStock: true,
         entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
-        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.',
+        urlfile1: '../images/foto 2.webp',
+        urlfile2: '../images/foto 3.webp',
+        urlfile3: '../images/foto 3.webp'
     }, 
     {
         id: 2, 
@@ -61,7 +67,10 @@ var allProducts = [
         category: 'Colar',
         inStock: true,
         entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
-        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.',
+        urlfile1: '../images/foto 2.webp',
+        urlfile2: '../images/foto 3.webp',
+        urlfile3: '../images/foto 3.webp'
 
     },
     {
@@ -75,8 +84,10 @@ var allProducts = [
         category: 'Colar',
         inStock: true,
         entireDescription: 'O Colar Sereia dos Golfinhos Protetores apresenta um pingente meticulosamente esculpido em forma de sereia, envolto em detalhes intrincados que capturam a beleza e mistério das profundezas do oceano. O pingente é banhado a prata 925, proporcionando um brilho duradouro e um toque de sofisticação.',
-        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.'
-
+        specifications: 'Material: Prata 925 e Zircônia. Tamanho: 50 cm.',
+        urlfile1: '../images/foto 2.webp',
+        urlfile2: '../images/foto 3.webp',
+        urlfile3: '../images/foto 3.webp'
     }
 ]
 

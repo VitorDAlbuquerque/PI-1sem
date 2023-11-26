@@ -91,6 +91,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 350px;
 }
 
 .colorProd{
