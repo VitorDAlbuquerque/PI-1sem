@@ -12,11 +12,13 @@
 
 </head>
 <body onload="setProducts()">
+    <div class="maskSearch" id="maskSearch" onclick="searchOutFocus()">
+    </div>
     <div class="navbar">
         <img class="imgLogo" src="../images/logo novo sem fundo.png" alt="">
 
         <div class="divInputSearch">
-            <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" onblur="searchOutFocus()">
+            <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" >
             <i class="fa-solid fa-magnifying-glass"></i>
             <div class="resultSearch" id="resultSearch">
             </div>
@@ -79,8 +81,10 @@
     <div class="navbarLinks">
         <a class="linkNav" href="../index.html"><li class="liNav">INÍCIO</li></a>
         <a class="linkNav"href="homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
-        <a class="linkNav"href="aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
-        <a class="linkNav"href="orderTracking.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
+        <a class="linkNavPc" href="aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
+        <a class="linkNavTablet" href="aboutDonations.html"><li class="liNav">DOAÇÕES</li></a>
+        <a class="linkNav" href="orderTracking.html"><li class="liNav">RASTREAR PEDIDOS</li></a>
+
     </div>
     <div class="main">
         <div class="mainContent">

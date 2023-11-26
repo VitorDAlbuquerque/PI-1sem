@@ -160,13 +160,17 @@ function handleHeartIcon(indice){
 //FAVORITAR E DESFAVORITAR PRODUTO
 
 //PROCURAR PRODUTOS
-function searchProducts(){
+function searchProducts(page){
     var searchInputValue = document.getElementById('searchInput').value
 
     var result = document.getElementById('resultSearch').innerHTML = allProducts.filter((result) => result.name == searchInputValue)
     console.log(searchInputValue)
     for(var i = 0; i < result.length; i++){
-        document.getElementById('resultSearch').innerHTML = `<div class='resultLi'><img src="${result[i].urlfile}" alt=""> <p>${result[i].name}</p></div>`
+        if(page == "index"){
+            document.getElementById('resultSearch').innerHTML = `<div class='resultLi' onclick="attCurrentProduct(${result[i].id})"><a href="./pages/product.html"><img src="${result[i].urlfile}" alt=""> <p>${result[i].name}</p></div>`
+        } else {
+            document.getElementById('resultSearch').innerHTML = `<div class='resultLi' onclick="attCurrentProduct(${result[i].id})"><a href="product.html"><img src="${result[i].urlfile}" alt=""> <p>${result[i].name}</p></div>`
+        }
     }
 }
 //PROCURAR PRODUTOS
@@ -174,14 +178,21 @@ function searchProducts(){
 //MOSTRAR PESQUISA DE PRODUTOS
 function searchFocus(){
     const list = document.getElementById('resultSearch');
+    const mask = document.getElementById('maskSearch');
+
     list.style.display = 'flex'
+    mask.style.display = 'block'
+
 }
 //MOSTRAR PESQUISA DE PRODUTOS
 
 //OCULTAR PESQUISA DE PRODUTOS
 function searchOutFocus(){
     const list = document.getElementById('resultSearch');
+    const mask = document.getElementById('maskSearch');
+
     list.style.display = 'none'
+    mask.style.display = 'none'
 }
 //OCULTAR PESQUISA DE PRODUTOS
 
@@ -205,7 +216,6 @@ function innerResultSearch() {
 //CARREGAR PRODUTOS FAVORITOS
 function handleLoadProduct(){
     const list = document.getElementById('listLikes');
-    console.log(productsLiked)
 
     for(var i = 0; i <allProducts.length;i++){
         if(productsLiked[i]){

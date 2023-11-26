@@ -8,7 +8,6 @@
     gap: 50px;
     font-family: Aleo, 'sans-serif';
     flex-wrap: wrap;
-
 }
 
 .linksFooter{
@@ -16,9 +15,19 @@
     font-family: Montserrat, 'sans-serif';
 }
 
+.contato{
+    width: 260px;
+}
+
+.institucional{
+    width: 260px;
+}
+
 .redes {
     display: flex;
     align-items: end;
+    width: 260px;
+
 }
 
 .divIncosFooter{

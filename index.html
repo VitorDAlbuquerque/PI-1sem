@@ -11,17 +11,19 @@
     <script src="./scripts/script.js"></script>
 </head>
 <body onload="innerProductsHtml('home')">
-    
+    <div class="maskSearch" id="maskSearch" onclick="searchOutFocus()">
+    </div>
     <div class="navbar">
         
         <img class="imgLogo" src="images/logo novo sem fundo.png" alt="">
         <div class="divInputSearch">
-            <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" onblur="searchOutFocus()">
+            <input onchange="searchProducts('index')" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" >
             <i class="fa-solid fa-magnifying-glass"></i>
 
             <div class="resultSearch" id="resultSearch">
                 
             </div>
+            
         </div>
         
         <div class="buttonsNavbar">
@@ -87,8 +89,9 @@
     <div class="navbarLinks">
         <a class="linkNav" href="index.html"><li class="liNav">INÍCIO</li></a>
         <a class="linkNav" href="./pages/homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
-        <a class="linkNav" href="./pages/aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
-        <a class="linkNav" href="./pages/orderTracking.html"><li class="liNav">RASTREAMENTO DE PEDIDOS</li></a>
+        <a class="linkNavPc" href="./pages/aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
+        <a class="linkNavTablet" href="./pages/aboutDonations.html"><li class="liNav">DOAÇÕES</li></a>
+        <a class="linkNav" href="./pages/orderTracking.html"><li class="liNav">RASTREAR PEDIDOS</li></a>
     </div>
     
     <div class="main">
