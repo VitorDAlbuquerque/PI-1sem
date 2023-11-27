@@ -3,6 +3,7 @@ var productsLiked = [];
 var productsOnCart = [];
 
 var currentProduct = ''
+var currentImage = ''
 
 function setProducts(){
     const local = JSON.parse(localStorage.getItem('likedItens'))
@@ -13,6 +14,7 @@ function setProducts(){
 
     if(current){
         currentProduct = current
+        currentImage = allProducts[current].urlfile
     }
 
     const productCart = JSON.parse(localStorage.getItem('productsOnCart'))
@@ -215,10 +217,9 @@ var allProducts = [
         entireDescription: 'Colar "Passion" com um toque de elegância marítima, apresentando um pingente em forma de coração em azul marinho profundo. Esta joia reflete a paixão com uma pitada de mistério oceânico, incorporando a profundidade e a intensidade de um sentimento único em um design refinado.',
         specifications: 'Material: Prata Italiana 925. Tamanho: 45 cm.',
         urlfile1: '../images/passion2.webp',
-        urlfile2: '../images/passion3.webp',
+        urlfile2: '../images/passion4.webp',
         urlfile3: '../images/passion.webp'
     }
-
 ]
 
 var quant = 1;
@@ -506,6 +507,7 @@ function innerProductInfoHtml(){
     const divProduct = document.getElementById("product")
 
     const newDivProduct = document.createElement('div')
+    setProducts()
 
     newDivProduct.innerHTML = `
     <div>
@@ -515,11 +517,12 @@ function innerProductInfoHtml(){
         <div class="productContent">
         
             <div class="nextPhoto">
-                <img src="${allProducts[current].urlfile1}" alt="">
-                <img src="${allProducts[current].urlfile2}" alt="">
-                <img src="${allProducts[current].urlfile3}" alt="">
+                <img class="nextImage" src="${allProducts[current].urlfile}" onclick="alterCurrentImage('${allProducts[current].urlfile}')" alt="">
+                <img class="nextImage" src="${allProducts[current].urlfile1}" onclick="alterCurrentImage('${allProducts[current].urlfile1}')" alt="">
+                <img class="nextImage" src="${allProducts[current].urlfile2}" onclick="alterCurrentImage('${allProducts[current].urlfile2}')" alt="">
+                <img class="nextImage" src="${allProducts[current].urlfile3}" onclick="alterCurrentImage('${allProducts[current].urlfile3}')" alt="">
             </div>
-            <div class="currentPhoto">
+            <div class="currentPhoto" id="currentPhoto">
                 <img src="${allProducts[current].urlfile}" alt="">
             </div>
             <div class="prodTitle">
@@ -534,6 +537,7 @@ function innerProductInfoHtml(){
                     <p>Ou apenas <strong>6x</strong> de <strong>R$ ${(allProducts[current].currentValue/6).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></p>
                 </div>
                 <div class="buttonsProduct">
+
                     <button class="minus" id="minusQuant" onclick="lessQuant()"><i class="fa-solid fa-minus"></i></button>
                     <input id="quant" class="btnQuant" type="number" value="${quant}" max="5" disabled>
                     <button class="plus" onclick="plusQuant()"><i class="fa-solid fa-plus"></i></button>
@@ -581,9 +585,16 @@ function innerProductInfoHtml(){
     `
     divProduct.appendChild(newDivProduct)
 
-    setProducts()
 }
 //MOSTRAR INFORMAÇÕES NA PAGINA DO PRODUTO
+
+function alterCurrentImage(image){
+    const newImage = document.getElementById('currentPhoto')
+    newImage.innerHTML = ''
+    newImage.innerHTML = `<img src="${image}" alt=""> `
+}
+
+
 
 //DIMINUIR QUANTIDADE
 function lessQuant(){

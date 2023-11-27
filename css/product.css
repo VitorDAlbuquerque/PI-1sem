@@ -63,6 +63,7 @@ body {
 
 .currentPhoto>img{
     height: 350px;
+    max-width: 350px;
 }
 
 @media screen and (max-width: 900px) {
@@ -75,6 +76,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.nextImage{
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nextImage:hover{
+    filter: brightness(0.7);
 }
 
 .nextPhoto > img{
