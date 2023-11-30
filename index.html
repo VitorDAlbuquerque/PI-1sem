@@ -11,175 +11,178 @@
     <script src="./scripts/script.js"></script>
 </head>
 <body onload="innerProductsHtml('home')">
-    <div class="maskSearch" id="maskSearch" onclick="searchOutFocus()">
-    </div>
-    <div class="navbar">
-        
-        <img class="imgLogo" src="images/logo novo sem fundo.png" alt="">
-        <div class="divInputSearch">
-            <input onchange="searchProducts('index')" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" >
-            <i class="fa-solid fa-magnifying-glass"></i>
+    <header>
+        <div class="maskSearch" id="maskSearch" onclick="searchOutFocus()">
+        </div>
+        <div class="navbar">
+            
+            <img class="imgLogo" src="images/logo novo sem fundo.png" alt="">
+            <div class="divInputSearch">
+                <input onchange="searchProducts('index')" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" >
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="resultSearch" id="resultSearch">
+                <div class="resultSearch" id="resultSearch">
+                    
+                </div>
                 
             </div>
             
+            <div class="buttonsNavbar">
+                <p class="btnNavbar"><i class="fa-regular fa-circle-question"></i></p>
+                <p class="btnNavbar"><i class="fa-regular fa-circle-user"></i></p>
+                <p class="btnNavbar" onclick='slideLikes()'><i class="fa-regular fa-heart"></i></p>
+                <p class="btnNavbar" onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i></p>
+            </div>
+
+            <p class="mobileBtnBars" onclick="slideMobileMenu()"><i class="fa-solid fa-bars"></i></p>
+        </div>
+
+        <div class="mobileMenuSide" id="mobileMenuSide">
+            <div class="mobileMenuSideContentTitle">
+                <div class="mobileMenuTitle">
+                    <h2>Glowing Sea</h2>
+                    <p class="closeBag" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></p>
+                </div>
+            </div>
+            <div class="mobileMenuSideContent">
+                <ul class="listMobileMenu">
+                    <li><i class="fa-regular fa-circle-user"></i>Perfil</li>
+                    <li onclick='slideLikes()'><i class="fa-regular fa-heart"></i>Favoritos</li>
+                    <li onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i>Sacola</li>
+                </ul>
+                <hr>
+                <ul class="listMobileMenuNavigate">
+                    <a class="linkNav" href="index.html"><li class="liNavMobile"><i class="fa-solid fa-house"></i>Início</li></a>
+                    <a class="linkNav" href="./pages/homeProducts.html"><li class="liNavMobile"><i class="fa-solid fa-filter"></i>Categorias</li></a>
+                    <a class="linkNav" href="./pages/aboutDonations.html"><li class="liNavMobile"><i class="fa-solid fa-gears"></i>Como as doações funcionam</li></a>
+                    <a class="linkNav" href="./pages/orderTracking.html"><li class="liNavMobile"><i class="fa-regular fa-map"></i>Rastrear pedidos</li></a>
+                </ul>
+                <img src="images/logo novo sem fundo.png" alt="">
+            </div>
         </div>
         
-        <div class="buttonsNavbar">
-            <p class="btnNavbar"><i class="fa-regular fa-circle-question"></i></p>
-            <p class="btnNavbar"><i class="fa-regular fa-circle-user"></i></p>
-            <p class="btnNavbar" onclick='slideLikes()'><i class="fa-regular fa-heart"></i></p>
-            <p class="btnNavbar" onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i></p>
+        <div class="bag" id="bag">
+            <div class="bagContent">
+                <div class="bagTitle">
+                    <h2>Sacola</h2>
+                    <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
+                </div>
+                <div class="divProductsOnBag">
+                    <ul id="listCart" class="listLiked">
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <p class="mobileBtnBars" onclick="slideMobileMenu()"><i class="fa-solid fa-bars"></i></p>
-    </div>
+        <div class="likes" id="likes">
+            <div class="likesContent">
+                <div class="bagTitle">
+                    <h2>Favoritos</h2>
+                    <p class="closeBag" onclick="closeLikes()"><i class="fa-solid fa-xmark"></i></p>
+                </div>
+                <div class="divProductsLiked">
+                    <ul id="listLikes" class="listLiked">
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="navbarLinks">
+            <a class="linkNav" href="index.html"><li class="liNav">INÍCIO</li></a>
+            <a class="linkNav" href="./pages/homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
+            <a class="linkNavPc" href="./pages/aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
+            <a class="linkNavTablet" href="./pages/aboutDonations.html"><li class="liNav">DOAÇÕES</li></a>
+            <a class="linkNav" href="./pages/orderTracking.html"><li class="liNav">RASTREAR PEDIDOS</li></a>
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <div class="mainTitle">
+                <div class="mainTitleLeft">
+                    <h1 class="title">Faça a diferença</h1>
+                    <p class="description">
+                        Junte-se a nós nesta jornada de elegância consciente, onde o amor pela
+                        natureza e o estilo se unem para criar um mundo mais brilhante, tanto
+                        para você quanto para nossos amigos marinhos. Explore nossa coleção
+                        e faça parte dessa mudança. Juntos, podemos fazer a diferença, um
+                        acessório de cada vez.
+                    </p>
+                    <div class="divButton">
+                        <button class="btnHelp" onclick="learnAboutButton()">SAIBA COMO AJUDAR</button>
+                    </div>
+                </div>
+                <div class="mainTitleRight">
+                    <div class="imagemFoda">
+                        <img class="imageMainTitle" src="images/SEU PEDIDO (5).png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divAds">
+            <div class="ad">
+                <h4 class="h4Ad">10% off</h4>
+                <p>no pagamento via PIX</p>
+            </div>
+            <div class="ad">
+                <h4 class="h4Ad">Frete grátis</h4>
+                <p>para todo o Brasil</p>
+            </div>
+            <div class="ad">
+                <h4 class="h4Ad">Parcelamento</h4>
+                <p>em até 12x</p>
+            </div>
+            <div class="ad">
+                <h4 class="h4Ad">Site seguro</h4>
+                <p>compre tranquilo</p>
+            </div>
+            <div class="ad">
+                <h4 class="h4Ad">Atendimento</h4>
+                <p>via WhatsApp</p>
+            </div>
+            <div class="ad">
+                <h4 class="h4Ad">5% off</h4>
+                <p>ao se cadastrar</p>
+            </div>
+        </div>
 
-    <div class="mobileMenuSide" id="mobileMenuSide">
-        <div class="mobileMenuSideContentTitle">
-            <div class="mobileMenuTitle">
-                <h2>Glowing Sea</h2>
-                <p class="closeBag" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></p>
-            </div>
-        </div>
-        <div class="mobileMenuSideContent">
-            <ul class="listMobileMenu">
-                <li><i class="fa-regular fa-circle-user"></i>Perfil</li>
-                <li><i class="fa-regular fa-heart"></i>Favoritos</li>
-                <li><i class="fa-solid fa-bag-shopping"></i>Sacola</li>
-            </ul>
-            <hr>
-            <ul class="listMobileMenuNavigate">
-                <a class="linkNav" href="index.html"><li class="liNavMobile"><i class="fa-solid fa-house"></i>Início</li></a>
-                <a class="linkNav" href="./pages/homeProducts.html"><li class="liNavMobile"><i class="fa-solid fa-filter"></i>Categorias</li></a>
-                <a class="linkNav" href="./pages/aboutDonations.html"><li class="liNavMobile"><i class="fa-solid fa-gears"></i>Como as doações funcionam</li></a>
-                <a class="linkNav" href="./pages/orderTracking.html"><li class="liNavMobile"><i class="fa-regular fa-map"></i>Rastrear pedidos</li></a>
-            </ul>
-            <img src="images/logo novo sem fundo.png" alt="">
-        </div>
-    </div>
-    
-    <div class="bag" id="bag">
-        <div class="bagContent">
-            <div class="bagTitle">
-                <h2>Sacola</h2>
-                <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
-            </div>
-            <div class="divProductsOnBag">
-                <ul id="listCart" class="listLiked">
-                </ul>
-            </div>
-        </div>
-    </div>
+        <div class="mainProducts" id="mainProducts">
 
-    <div class="likes" id="likes">
-        <div class="likesContent">
-            <div class="bagTitle">
-                <h2>Favoritos</h2>
-                <p class="closeBag" onclick="closeLikes()"><i class="fa-solid fa-xmark"></i></p>
-            </div>
-            <div class="divProductsLiked">
-                <ul id="listLikes" class="listLiked">
-                </ul>
+        </div>
+    </main>
+        <footer class="footer">
+            <div class="contato">
+                <h1 class="titleFooter">CONTATO</h1>
+                <div class="linksFooter">
+                    <li>Endereço: Av. Ana Costa 484 - Santos-SP, CEP: 11060-002</li>
+                    <li>E-mail: sac@glowingsea.com</li>
+                    <li>Telefone: (13) 99660-8197</li>
+                    <li>Horário de Atendimento: Segunda a Sexta das 09h às 16h</li>
+                </div>
                 
             </div>
-        </div>
-    </div>
-    <div class="navbarLinks">
-        <a class="linkNav" href="index.html"><li class="liNav">INÍCIO</li></a>
-        <a class="linkNav" href="./pages/homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
-        <a class="linkNavPc" href="./pages/aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
-        <a class="linkNavTablet" href="./pages/aboutDonations.html"><li class="liNav">DOAÇÕES</li></a>
-        <a class="linkNav" href="./pages/orderTracking.html"><li class="liNav">RASTREAR PEDIDOS</li></a>
-    </div>
-    
-    <div class="main">
-        <div class="mainTitle">
-            <div class="mainTitleLeft">
-                <h1 class="title">Faça a diferença</h1>
-                <p class="description">
-                    Junte-se a nós nesta jornada de elegância consciente, onde o amor pela
-                    natureza e o estilo se unem para criar um mundo mais brilhante, tanto
-                    para você quanto para nossos amigos marinhos. Explore nossa coleção
-                    e faça parte dessa mudança. Juntos, podemos fazer a diferença, um
-                    acessório de cada vez.
-                </p>
-                <div class="divButton">
-                    <button class="btnHelp" onclick="learnAboutButton()">SAIBA COMO AJUDAR</button>
+            <div class="institucional">
+                <h1 class="titleFooter">INSTITUCIONAL</h1>
+                <div class="linksFooter">
+                    <li>Política de Reembolso</li>
+                    <li>Política de Frete e Entrega</li>
+                    <li>Política de privacidade</li>
+                    <li>Termos de Serviço</li>
+                    <li>Perguntas Frequentes</li>
+                </div>
+                
+            </div>
+            <div class="redes">
+                <div class="redesContent">
+                    <h3>NOSSAS REDES SOCIAIS</h3>
+                    <div class="divIncosFooter">
+                        <i class="fa-brands fa-square-whatsapp"></i>
+                        <i class="fa-brands fa-square-instagram"></i>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i class="fa-brands fa-square-twitter"></i>
+                    </div>
                 </div>
             </div>
-            <div class="mainTitleRight">
-                <div class="imagemFoda">
-                    <img class="imageMainTitle" src="images/SEU PEDIDO (5).png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="divAds">
-        <div class="ad">
-            <h4 class="h4Ad">10% off</h4>
-            <p>no pagamento via PIX</p>
-        </div>
-        <div class="ad">
-            <h4 class="h4Ad">Frete grátis</h4>
-            <p>para todo o Brasil</p>
-        </div>
-        <div class="ad">
-            <h4 class="h4Ad">Parcelamento</h4>
-            <p>em até 12x</p>
-        </div>
-        <div class="ad">
-            <h4 class="h4Ad">Site seguro</h4>
-            <p>compre tranquilo</p>
-        </div>
-        <div class="ad">
-            <h4 class="h4Ad">Atendimento</h4>
-            <p>via WhatsApp</p>
-        </div>
-        <div class="ad">
-            <h4 class="h4Ad">5% off</h4>
-            <p>ao se cadastrar</p>
-        </div>
-    </div>
-
-    <div class="mainProducts" id="mainProducts">
-
-    </div>
-
-    <div class="footer">
-        <div class="contato">
-            <h1 class="titleFooter">CONTATO</h1>
-            <div class="linksFooter">
-                <li>Endereço: Av. Ana Costa 484 - Santos-SP, CEP: 11060-002</li>
-                <li>E-mail: sac@glowingsea.com</li>
-                <li>Telefone: (13) 99660-8197</li>
-                <li>Horário de Atendimento: Segunda a Sexta das 09h às 16h</li>
-            </div>
-            
-        </div>
-        <div class="institucional">
-            <h1 class="titleFooter">INSTITUCIONAL</h1>
-            <div class="linksFooter">
-                <li>Política de Reembolso</li>
-                <li>Política de Frete e Entrega</li>
-                <li>Política de privacidade</li>
-                <li>Termos de Serviço</li>
-                <li>Perguntas Frequentes</li>
-            </div>
-            
-        </div>
-        <div class="redes">
-            <div class="redesContent">
-                <h3>NOSSAS REDES SOCIAIS</h3>
-                <div class="divIncosFooter">
-                    <i class="fa-brands fa-square-whatsapp"></i>
-                    <i class="fa-brands fa-square-instagram"></i>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+        </footer>
+    </main>
 </body>
 </html>

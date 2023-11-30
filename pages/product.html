@@ -11,88 +11,89 @@
     <script src="../scripts/script.js"></script>
 </head>
 <body onload="innerProductInfoHtml('product')">
-    <div class="maskSearch" id="maskSearch" onclick="searchOutFocus()">
-    </div>
-    <div class="navbar">
-        <img class="imgLogo" src="../images/logo novo sem fundo.png" alt="">
+    <header>
+        <div class="maskSearch" id="maskSearch" onclick="searchOutFocus()">
+        </div>
+        <div class="navbar">
+            <img class="imgLogo" src="../images/logo novo sem fundo.png" alt="">
 
-        <div class="divInputSearch">
-            <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" >
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <div class="resultSearch" id="resultSearch">
+            <div class="divInputSearch">
+                <input onchange="searchProducts()" onfocus="searchFocus()" type="text" class="searchInput" placeholder="Buscar produtos" id="searchInput" >
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="resultSearch" id="resultSearch">
+                </div>
             </div>
-        </div>
-        <div class="buttonsNavbar">
-            <p class="btnNavbar"><i class="fa-regular fa-circle-question"></i></p>
-            <p class="btnNavbar"><i class="fa-regular fa-circle-user"></i></p>
-            <p class="btnNavbar" onclick='slideLikes()'><i class="fa-regular fa-heart"></i></p>
-            <p class="btnNavbar" onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i></p>
-        </div>
-        <p class="mobileBtnBars" onclick="slideMobileMenu()"><i class="fa-solid fa-bars"></i></p>
+            <div class="buttonsNavbar">
+                <p class="btnNavbar"><i class="fa-regular fa-circle-question"></i></p>
+                <p class="btnNavbar"><i class="fa-regular fa-circle-user"></i></p>
+                <p class="btnNavbar" onclick='slideLikes()'><i class="fa-regular fa-heart"></i></p>
+                <p class="btnNavbar" onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i></p>
+            </div>
+            <p class="mobileBtnBars" onclick="slideMobileMenu()"><i class="fa-solid fa-bars"></i></p>
 
-    </div>
-    <div class="mobileMenuSide" id="mobileMenuSide">
-        <div class="mobileMenuSideContentTitle">
-            <div class="mobileMenuTitle">
-                <h2>Glowing Sea</h2>
-                <p class="closeBag" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></p>
-            </div>
         </div>
-        <div class="mobileMenuSideContent">
-            <ul class="listMobileMenu">
-                <li><i class="fa-regular fa-circle-user"></i>Perfil</li>
-                <li><i class="fa-regular fa-heart"></i>Favoritos</li>
-                <li><i class="fa-solid fa-bag-shopping"></i>Sacola</li>
-            </ul>
-            <hr>
-            <ul class="listMobileMenuNavigate">
-                <a class="linkNav" href="../index.html"><li class="liNavMobile"><i class="fa-solid fa-house"></i>Início</li></a>
-                <a class="linkNav" href="homeProducts.html"><li class="liNavMobile"><i class="fa-solid fa-filter"></i>Categorias</li></a>
-                <a class="linkNav" href="aboutDonations.html"><li class="liNavMobile"><i class="fa-solid fa-gears"></i>Como as doações funcionam</li></a>
-                <a class="linkNav" href="orderTracking.html"><li class="liNavMobile"><i class="fa-regular fa-map"></i>Rastrear pedidos</li></a>
-            </ul>
-            <img src="../images/logo novo sem fundo.png" alt="">
-        </div>
-    </div>
-    <div class="bag" id="bag">
-        <div class="bagContent">
-            <div class="bagTitle">
-                <h2>Sacola</h2>
-                <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
+        <div class="mobileMenuSide" id="mobileMenuSide">
+            <div class="mobileMenuSideContentTitle">
+                <div class="mobileMenuTitle">
+                    <h2>Glowing Sea</h2>
+                    <p class="closeBag" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></p>
+                </div>
             </div>
-            <div class="divProductsOnBag">
-                <ul id="listCart" class="listLiked">
+            <div class="mobileMenuSideContent">
+                <ul class="listMobileMenu">
+                    <li><i class="fa-regular fa-circle-user"></i>Perfil</li>
+                    <li onclick='slideLikes()'><i class="fa-regular fa-heart"></i>Favoritos</li>
+                    <li onclick='slideBag()'><i class="fa-solid fa-bag-shopping"></i>Sacola</li>
                 </ul>
-            </div>
-        </div>
-    </div>
-    <div class="likes" id="likes">
-        <div class="likesContent">
-            <div class="bagTitle">
-                <h2>Favoritos</h2>
-                <p class="closeBag" onclick="closeLikes()"><i class="fa-solid fa-xmark"></i></p>
-            </div>
-            <div class="divProductsLiked">
-                <ul id="listLikes" class="listLiked">
+                <hr>
+                <ul class="listMobileMenuNavigate">
+                    <a class="linkNav" href="../index.html"><li class="liNavMobile"><i class="fa-solid fa-house"></i>Início</li></a>
+                    <a class="linkNav" href="homeProducts.html"><li class="liNavMobile"><i class="fa-solid fa-filter"></i>Categorias</li></a>
+                    <a class="linkNav" href="aboutDonations.html"><li class="liNavMobile"><i class="fa-solid fa-gears"></i>Como as doações funcionam</li></a>
+                    <a class="linkNav" href="orderTracking.html"><li class="liNavMobile"><i class="fa-regular fa-map"></i>Rastrear pedidos</li></a>
                 </ul>
+                <img src="../images/logo novo sem fundo.png" alt="">
             </div>
         </div>
-    </div>
-    <div class="navbarLinks">
-        <a class="linkNav" href="/index.html"><li class="liNav">INÍCIO</li></a>
-        <a class="linkNav"href="homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
-        <a class="linkNavPc" href="aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
-        <a class="linkNavTablet" href="aboutDonations.html"><li class="liNav">DOAÇÕES</li></a>
-        <a class="linkNav" href="orderTracking.html"><li class="liNav">RASTREAR PEDIDOS</li></a>
-
-    </div>
-    <div class="main">
+        <div class="bag" id="bag">
+            <div class="bagContent">
+                <div class="bagTitle">
+                    <h2>Sacola</h2>
+                    <p class="closeBag" onclick="closeBag()"><i class="fa-solid fa-xmark"></i></p>
+                </div>
+                <div class="divProductsOnBag">
+                    <ul id="listCart" class="listLiked">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="likes" id="likes">
+            <div class="likesContent">
+                <div class="bagTitle">
+                    <h2>Favoritos</h2>
+                    <p class="closeBag" onclick="closeLikes()"><i class="fa-solid fa-xmark"></i></p>
+                </div>
+                <div class="divProductsLiked">
+                    <ul id="listLikes" class="listLiked">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="navbarLinks">
+            <a class="linkNav" href="/index.html"><li class="liNav">INÍCIO</li></a>
+            <a class="linkNav"href="homeProducts.html"><li class="liNav">CATEGORIAS</li></a>
+            <a class="linkNavPc" href="aboutDonations.html"><li class="liNav">COMO FUNCIONAM AS DOAÇÕES</li></a>
+            <a class="linkNavTablet" href="aboutDonations.html"><li class="liNav">DOAÇÕES</li></a>
+            <a class="linkNav" href="orderTracking.html"><li class="liNav">RASTREAR PEDIDOS</li></a>
+        </div>
+    </header>
+    <main class="main">
         <div class="product" id="product">
             
             
         </div>
-    </div>
-    <div class="footer">
+    </main>
+    <footer class="footer">
         <div class="contato">
             <h1 class="titleFooter">CONTATO</h1>
             <div class="linksFooter">
@@ -124,6 +125,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 </body>
 </html>

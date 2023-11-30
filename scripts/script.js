@@ -5,7 +5,7 @@ var productsOnCart = [];
 var currentProduct = ''
 var currentImage = ''
 
-function setProducts(){
+function setProducts(page){
     const local = JSON.parse(localStorage.getItem('likedItens'))
     if(local){
         productsLiked = local
@@ -21,8 +21,8 @@ function setProducts(){
     if(productCart){
         productsOnCart = productCart
     }
-    handleLoadProduct()
-    onLoadCart()
+    handleLoadProduct(page)
+    onLoadCart(page)
 }
 
 var allProducts = [
@@ -229,7 +229,11 @@ function slideBag(){
     const bag = document.getElementById('bag');
 
     if(bag){
-        bag.style.width = '300px'
+        if(window.screen.width>450){
+            bag.style.width = '300px'
+        } else {
+            bag.style.width = '100%'
+        }
     }
 }
 
@@ -244,7 +248,11 @@ function slideLikes(){
     const likes = document.getElementById('likes');
 
     if(likes){
-        likes.style.width = '300px'
+        if(window.screen.width>450){
+            likes.style.width = '300px'
+        } else {
+            likes.style.width = '100%'
+        }
     }
 }
 
@@ -356,7 +364,7 @@ function innerResultSearch() {
 
 
 //CARREGAR PRODUTOS FAVORITOS
-function handleLoadProduct(){
+function handleLoadProduct(page){
     const list = document.getElementById('listLikes');
 
     for(var i = 0; i <allProducts.length;i++){
@@ -373,8 +381,11 @@ function handleLoadProduct(){
                     newLi.setAttribute("id", 'likedLi')
                     newLi.setAttribute("class", "liLiked")
                     newA.setAttribute("onclick", `attCurrentProduct(${productsLiked[i].id})`)
-
-                    newA.setAttribute("href", "product.html")
+                    if(page == "home"){
+                        newA.setAttribute("href", "./pages/product.html")
+                    } else {
+                        newA.setAttribute("href", "product.html")
+                    }
 
                     newLi.innerHTML = Object.values(productsLiked[i])
 
@@ -390,7 +401,12 @@ function handleLoadProduct(){
                 newLi.setAttribute("class", "liLiked")
                 newLi.innerHTML = Object.values(productsLiked[i])
                 newA.setAttribute("onclick", `attCurrentProduct(${productsLiked[i].id})`)
-                newA.setAttribute("href", "product.html")
+
+                if(page == "home"){
+                    newA.setAttribute("href", "./pages/product.html")
+                } else {
+                    newA.setAttribute("href", "product.html")
+                }
 
                 list.appendChild(newA);
                 newA.appendChild(newLi)
@@ -421,7 +437,7 @@ function innerProductsHtml(page){
             </div>
             `
             if(i == 3){
-                setProducts()
+                setProducts(page)
                 return;
             }
         } else if(page == 'homeProducts'){
@@ -446,7 +462,7 @@ function innerProductsHtml(page){
         //localStorage.removeItem('likedItens')
         //console.log(`heartIcon${allProducts[i].id}`)
     }
-    setProducts()
+    setProducts(page)
 }
 //MOSTRAR PRODUTOS
 
@@ -533,7 +549,7 @@ function innerProductInfoHtml(){
 
                 <div>
                     <p><del>R$ ${allProducts[current].oldValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</del></p>
-                    <div class="currentValue"><h1>R$ ${allProducts[current].currentValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</h1> <p class="promotePercent">-26%</p></div>
+                    <div class="currentValue"><h1>R$ ${allProducts[current].currentValue.toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</h1> <p class="promotePercent">- ${(100-(allProducts[current].currentValue/allProducts[current].oldValue)*100).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 0})}%</p></div>
                     <p>Ou apenas <strong>6x</strong> de <strong>R$ ${(allProducts[current].currentValue/6).toLocaleString('pt-br', {style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></p>
                 </div>
                 <div class="buttonsProduct">
@@ -640,14 +656,18 @@ function addProductsOnCart(){
 //ADICIONAR PRODUTOS AO CARRINHO
 
 //CARREGAR CARRINHO
-function onLoadCart() {
+function onLoadCart(page) {
     const listCart = document.getElementById('listCart')
     
     for(var i = 0; i < productsOnCart.length; i++){
         const newA = document.createElement('a')
         const newLi = document.createElement('li')
         newLi.setAttribute("class", "liLiked")
-        newA.setAttribute("href", "product.html")
+        if(page == 'home'){
+            newA.setAttribute("href", "./pages/product.html")
+        }else {
+            newA.setAttribute("href", "product.html")
+        }
         newA.setAttribute("onclick", `attCurrentProduct(${productsOnCart[i].id})`)
 
         newLi.innerHTML = `<img onclick="attCurrentProduct(${productsOnCart[i].id})" src="${productsOnCart[i].urlfile}" alt=""> <p>${productsOnCart[i].name}</p></a>`
